@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background: #F1F3F8;
+			}
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			a{
+				text-decoration: none;
+			}
+			li{
+				list-style: none;
+			}
+			.box{
+				width: 100%;
+				height: 1080px;
+			}
+			.content-box{
+				width: 1280px;
+				height: 1080px;
+				margin: 0 auto;
+			}
+			.content-box .left{
+				float: left;
+				width: 100px;
+				height: 1080px;
+				background-color: #454953;
+			}
+			.content-box .left img{
+				width: 60px;
+				height: 60px;
+				margin: 19px 20px 0px 20px;
+			}
+			.content-box .left .text-name{
+				text-align: center;
+				color: #fff;
+				font-size: 20px;
+				margin-top: 8px;
+				margin-bottom: 33px;
+			}
+			/*排班表*/
+			.content-box .left .work-table{
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				font-size: 18px;
+				color: #fff;
+			}
+			.content-box .left .work-table:hover{
+				cursor: pointer;
+				background-color: #5E6578;
+			}			
+			.content-box .left .work-table img{
+				display: inline-block;
+				width: 30px;
+				height: 29px;
+			}
+			/*值班室*/
+			.content-box .left .watch-room{
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				font-size: 18px;
+				color: #fff;
+				position: relative;
+			}
+			.content-box .left .watch-room .new-mess{
+				display: block;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background-color: #FF3621;
+				font-size: 11px;
+				line-height: 15px;
+				position: absolute;
+				top: 18px;
+				right: 19px;
+			}
+			.content-box .left .watch-room:hover{
+				cursor: pointer;
+				background-color: #5E6578;
+			}
+			.content-box .left .watch-room img{
+				display: inline-block;
+				width: 30px;
+				height: 29px;
+			}
+			/*值班表内容*/
+			.content-box .work-right{
+				width: 1178px;
+				height: 1080px;
+				float: left;
+				position: relative;
+				background: #fff;
+			}
+			.content-box .work-right .up-time{
+				text-align: center;
+				margin-top: 27px;
+				font-size: 16px;
+				color: #E2ACAC;
+			}
+			.content-box .work-right .up-time .num{
+				font-size: 16px;
+				color: #1BBD8F;
+			}
+			.content-box .work-right .down-time{
+				text-align: center;
+				font-size: 16px;
+				color: #494949;
+				margin-top: 32px;
+			}
+			.content-box .work-right .down-time .bigtime{
+				font: 900 50px "微软雅黑";
+				color: #464646;
+			}
+			.content-box .work-right .change-day .paiban-text{
+				
+			}
+			.content-box .work-right .change-day{
+				width: 350px;
+				position: absolute;
+				top:215px;
+				left: 451px;
+			}
+			.content-box .work-right .change-day ul li{
+				float: left;
+				font-size: 15px;
+				color: lightgrey;
+				cursor: pointer;
+				margin-right: 30px;
+			}
+			/*排班表*/
+			.content-box .work-right .paiban-left{
+				width: 436px;
+				position: absolute;
+				top: 248px;
+				left: 114px;
+			}
+			.content-box .work-right .paiban-right{
+				width: 436px;
+				position: absolute;
+				top: 248px;
+				left: 627px;
+			}			
+			.content-box .work-right>ul>li{
+				padding-left: 17px;
+				line-height: 44px;
+				height: 44px;
+				color: #353535;
+				font-size: 15px;
+				border: 1px solid #C8C7CC;
+				cursor: pointer;
+			}
+			.content-box .work-right ul li span{
+				float: right;
+				padding-right: 26px;
+				font-size: 15px;
+				color: #1BBD8F;
+			}
+	
+			/*---------------------------------------------------------*/
+			/*值班室内容*/
+			/*---------------------------------------------------------*/
+			.content-box .watch-right{
+				float: left;
+				width: 1180px;
+				height: 1080px;
+				display: none;
+				background-color: #F0F2F8;
+				/*overflow: hidden;*/
+			}
+			.content-box .watch-right .renwu{
+				width: 300px;
+				height: 37px;
+				text-align: center;
+				color: #fff;
+				font-size: 14px;
+				line-height: 37px;
+				background-color: #2C2F36;
+			}
+			.content-box .watch-right .left-box{
+				float: left;
+				width: 300px;
+				height: 1080px;
+				background-color: #2C2F36;
+			}
+			.content-box .watch-right .left-box li{
+				height: 44px;
+				line-height: 44px;
+				color: #fff;
+				font-size: 15px;
+				border-top: 1px solid #171D2C;
+				border-bottom: 1px solid #171D2C;
+				position: relative;
+				cursor: pointer;
+			}
+			.content-box .watch-right .left-box li .type-img .icon{
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+			}
+			.content-box .watch-right .left-box li .type-text{
+				display: inline-block;
+				width: 120px;
+				font-size: 15px;
+				color: #fff;
+				padding-left: 45px;
+			}
+			.content-box .watch-right .left-box li .newhot{
+				width: 8px;
+				height: 8px;
+				background: #FF3621;
+				position: absolute;			
+				top: 19px;
+				left: 128px;
+				border-radius: 50%;
+			}
+			.content-box .watch-right .left-box li .name-text{
+				width: 40px;
+				font-size: 15px;
+				color: #F5F5F5;
+			}
+			.content-box .watch-right .left-box li .sex-text{
+				font-size: 15px;
+				color: #F5F5F5;
+				padding-left: 10px;
+			}
+			.content-box .watch-right .left-box li .age-text{
+				font-size: 15px;
+				color: #F5F5F5;
+				padding-left: 10px;
+			}
+			.content-box .watch-right .right-box{
+				float: right;
+				width: 880px;
+				height: 1080px;
+			}
+			.content-box .watch-right .right-box .inquiry-state{
+				height: 75px;
+				background-color: #FFFFFF;
+				position: relative;
+			}
+			.content-box .watch-right .right-box .inquiry-state ul{
+				position: absolute;
+				top: 38px;
+				left: 116px;
+			}
+			.content-box .watch-right .right-box .inquiry-state ul li{
+				font-size: 14px;
+				color: #646464;
+				float: left;
+				padding-right: 48px;
+			}
+			.content-box .watch-right .right-box .inquiry-state .asking-text{
+				position: absolute;
+				top: 27px;
+				left: 20px;
+				font-size: 15px;
+				color: #353535;
+			}
+			.content-box .watch-right .right-box .dialog-box{
+				position: relative;
+				background-color: #F0F2F8;
+			}
+			.content-box .watch-right .right-box .dialog-box .sanjiao{
+				width: 10px;
+				height: 10px;
+				background-color: #fff;
+				transform:rotate(45deg);
+				position: absolute;
+				top: 46px;
+				left: 90px;
+			}
+			.content-box .watch-right .right-box .dialog-box .head-image{
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				top: 19px;
+				left: 20px;
+			}
+			.content-box .watch-right .right-box .dialog-box .mess-box{
+				width: 550px;
+				height: 144px;
+				background-color: #fff;
+				border-radius: 5px 5px 5px 5px;
+				position: absolute;
+				top: 32px;
+				left: 95px;
+			}
+			.content-box .watch-right .right-box .dialog-box .mess-box .title-text{
+				display: block;
+				font-size: 15px;
+				color: #353535;
+				padding: 5px 0px 5px 17px;
+			}
+			.content-box .watch-right .right-box .dialog-box .mess-box .body-case{
+				width: 521px;
+				height: 50px;
+				font-size: 13px;
+				color: #646464;
+				padding-left: 17px;
+			}
+			.content-box .watch-right .right-box .dialog-box .mess-box a{
+				color: 	#1BBD8F;
+				font-size: 15px;
+				padding-left: 17px;
+			}
+			.content-box .watch-right .right-box .dialog-box .hint-text{
+				width: 281px;
+				height: 22px;
+				line-height: 22px;
+				text-align: center;
+				font-size: 13px;
+				color: #fff;
+				border-radius: 5px 5px 5px 5px;
+				background-color: #C1C6D4;
+				position: absolute;
+				top: 192px;
+				left: 220px;
+			}
+			.content-box .watch-right .right-box .dialog-box .btn{
+				display: block;
+				width: 217px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				color: #fff;		
+				font-size: 20px;
+				background-color: #3abb9c;
+				position: absolute;
+				top: 278px;
+				left: 257px;
+				border-radius: 50px 50px 50px;
+			}
+			.content-box .watch-right .right-box .dialog-box .btn:hover{
+				background-color: #1cb28e;
+			}
+			.content-box .watch-right .right-box .dialog-box .chat-box{
+				width: 880px;
+				height: 75px;
+				color: #ADADAD;
+				background-color: #fff;
+				position: absolute;
+				top: 500px;
+				left: 0px;
+				display: none;
+			}
+			.content-box .watch-right .right-box .dialog-box .chat-box input{
+				height: 75px;
+				border: 0 none;
+				outline-style: none;
+				padding-left: 11px;
+			}
+			.content-box .watch-right .right-box .dialog-box .chat-box .submit{
+				float: right;
+				line-height: 75px;
+				font-size: 18px;
+				color: #1BBD8F;
+				cursor: pointer;
+				padding-right: 18px;				
+			}
+			.content-box .watch-right .right-box .dialog-box .chat-box .image-box{
+				float: right;
+				width: 75px;
+				height: 75px;
+				line-height: 75px;
+				background-color: #454953;
+				text-align: center;
+				cursor: pointer;
+			}
+			.content-box .watch-right .right-box .dialog-box .chat-box img{
+				width: 25px;
+				height: 25px;
+			}
+			
+			/* huaqiang */
+			.paiban-left li:nth-child(2n){
+				background: rgba(26,189,143,0.10);
+			}
+			.paiban-right li:nth-child(2n){
+				background: rgba(26,189,143,0.10);
+			}
+			
+			.paiban-left li:after, .paiban-right li:after{
+				content: ' ';
+				height: 0;
+				display: block;
+				clear: both;
+			}
+			.paiban-left li img, .paiban-right li img{
+				margin-right: 30px;
+				float: right;
+				margin-top: 12px;
+			}
+			.active{
+				color: #1BBD8F !important;
+			}
+			/*------------------------------------------------------*/
+			/*心电图解读*/
+			/*--------------------------------------------------------*/
+			.jiedu-box {
+				float: right;
+				width: 880px;
+				height: 3000px;
+				background: #fff;
+				position: relative;
+			}
+			.jiedu-box .health-box {
+				width: 880px;
+				height: 75px;
+				background-color: #fff;
+				border-bottom: 1px solid #ccc;
+			}
+			.jiedu-box .user-mes{
+				float: left;
+				width: 230px;
+				height: 75px;
+				background-color: #454953;
+				line-height: 75px;
+				position: relative;
+			}
+			.jiedu-box .user-mes img{
+				position: absolute;
+				top: 17px;
+				left: 20px;
+				width: 40px;
+				height: 40px;
+			}
+			.jiedu-box .user-mes .Myname{
+				font-size: 18px;
+				color: #fff;
+				margin-left: 64px;
+			}
+			/*基本档案*/
+			.jiedu-box .myinfo-box{
+				width: 840px;
+				height: 216px;
+				position: absolute;
+				top: 101px;
+				left: 20px;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}
+			.jiedu-box .myinfo-box .left-list{
+				width: 145px;
+				height: 120px;
+				margin: 5px 0px 0px 72px;
+				float: left;
+			}
+			.jiedu-box .myinfo-box .right-list{
+				width: 500px;
+				height: 120px;
+				margin: 0px 0px 0px 96px;
+				float: left;
+			}
+			.jiedu-box .myinfo-box .left-list ul li,
+			.jiedu-box .myinfo-box .right-list ul li{
+				height: 30px;
+				font-size: 15px;
+				color: #353535;
+				padding-bottom: 5px;
+			}
+			.jiedu-box .myinfo-box .right-list ul li span{
+				display: inline-block;
+				height: 30px;
+				font-size: 15px;
+				color: #646464;
+				padding-left: 15px;
+			}
+			.jiedu-box .myinfo-box .left-list ul li span{
+				display: inline-block;
+				height: 30px;
+				font-size: 15px;
+				color: #646464;
+				padding-left: 45px;
+			}
+			.jiedu-box .myinfo-box a,
+			.jiedu-box .xindian-box a{
+				display: block;
+				width: 117px;
+				height: 34px;
+				font-size: 18px;
+				color: #fff;
+				line-height: 34px;
+				text-align: center;
+				background: #5781EB;
+				margin-top: 6px;
+				border-radius: 0px 30px 30px 0px;
+			}
+			/*心电图*/
+			.jiedu-box .xindian-box{
+				width: 840px;
+				height: 216px;
+				margin: 0 auto;
+				position: absolute;
+				top: 347px;
+				left: 20px;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}.jiedu-box {
+				float: right;
+				width: 880px;
+				height: 3000px;
+				background: #fff;
+				position: relative;
+			}
+			.jiedu-box .health-box {
+				width: 880px;
+				height: 75px;
+				background-color: #fff;
+				border-bottom: 1px solid #ccc;
+			}
+			.jiedu-box .user-mes{
+				float: left;
+				width: 230px;
+				height: 75px;
+				background-color: #454953;
+				line-height: 75px;
+				position: relative;
+			}
+			.jiedu-box .user-mes img{
+				position: absolute;
+				top: 17px;
+				left: 20px;
+				width: 40px;
+				height: 40px;
+			}
+			.jiedu-box .user-mes .Myname{
+				font-size: 18px;
+				color: #fff;
+				margin-left: 64px;
+			}
+			/*基本档案*/
+			.jiedu-box .myinfo-box{
+				width: 840px;
+				height: 216px;
+				position: absolute;
+				top: 101px;
+				left: 20px;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}
+			.jiedu-box .myinfo-box .left-list{
+				width: 145px;
+				height: 120px;
+				margin: 5px 0px 0px 72px;
+				float: left;
+			}
+			.jiedu-box .myinfo-box .right-list{
+				width: 500px;
+				height: 120px;
+				margin: 0px 0px 0px 96px;
+				float: left;
+			}
+			.jiedu-box .myinfo-box .left-list ul li,
+			.jiedu-box .myinfo-box .right-list ul li{
+				height: 30px;
+				font-size: 15px;
+				color: #353535;
+				padding-bottom: 5px;
+			}
+			.jiedu-box .myinfo-box .right-list ul li span{
+				display: inline-block;
+				height: 30px;
+				font-size: 15px;
+				color: #646464;
+				padding-left: 15px;
+			}
+			.jiedu-box .myinfo-box .left-list ul li span{
+				display: inline-block;
+				height: 30px;
+				font-size: 15px;
+				color: #646464;
+				padding-left: 45px;
+			}
+			.jiedu-box .myinfo-box a,
+			.jiedu-box .xindian-box a{
+				display: block;
+				width: 117px;
+				height: 34px;
+				font-size: 18px;
+				color: #fff;
+				line-height: 34px;
+				text-align: center;
+				background: #5781EB;
+				margin-top: 6px;
+				border-radius: 0px 30px 30px 0px;
+			}
+			/*心电图*/
+			.jiedu-box .xindian-box{
+				width: 840px;
+				height: 216px;
+				margin: 0 auto;
+				position: absolute;
+				top: 347px;
+				left: 20px;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}
+			.xindian-box .update-time{
+				font-size: 13px;
+				color: #8C8C8C;
+				position: absolute;
+				top: 17px;
+				left: 133px;
+			}
+			.xindian-box .icon{
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 53px;
+				left: 75px;
+			}
+			.xindian-box .condition{
+				width: 630px;
+				height: 130px;
+				margin: 0px auto;
+			}
+			.xindian-box .condition ul li{
+				padding-top: 12px;
+				height: 25px;
+			}
+			.xindian-box .condition ul li .s1{
+				font-size: 15px;
+				color: #333;
+				padding-right: 40px;
+			}
+			.xindian-box .condition ul li .s2{
+				font-size: 15px;
+				color: #333;
+				padding-right: 10px;
+			}
+			.xindian-box .condition ul li .s3{
+				font-size: 15px;
+				color: #171717;
+				padding-right: 10px;
+			}
+			.xindian-box .condition ul li .s4{
+				font-size: 15px;
+				color: #C8C7CC;
+			}
+			.xindian-box .condition ul li .s5{
+				font-size: 15px;
+				color: #171717;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			.xindian-box .condition ul li .s6{
+				font-size: 15px;
+				color: #C8C7CC;
+			}
+			.xindian-box .condition ul li .s7{
+				font-size: 15px;
+				color: #171717;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			.xindian-box .condition ul li .p1{
+				font-size: 15px;
+				color: #646464;
+				padding-right: 20px;
+			}
+			.xindian-box .condition ul li .p2,
+			.xindian-box .condition ul li .p3,
+			.xindian-box .condition ul li .p4{
+				font-size: 15px;
+				color: #646464;
+				padding-right: 20px;
+			}
+			.xindian-box .condition ul li .p5{
+				font-size: 15px;
+				color: #646464;
+			}
+			.xindian-box .chakan{
+				font-size: 15px;
+				color: #1BBD8F;
+				margin-left: 103px;
+				cursor: pointer;
+			}
+			.jiedu-box .evaluate{
+				width: 841px;
+				height: 600px;
+				position: absolute;
+				top: 590px;
+				left: 20px;
+			}
+			.evaluate .s-one{
+				font-size: 15px;
+				color: #353535;
+				position: absolute;
+				top: 50px;
+				left: 0px;
+			}
+			.evaluate .icon-one{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 20px;
+				left: 127px;
+			}
+			.evaluate .icon-two{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 20px;
+				left: 242px;
+			}
+			.evaluate .icon-three{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 20px;
+				left: 357px;
+			}
+			.evaluate .s-two{
+				font-size: 15px;
+				color: #646464;
+				position: absolute;
+				top: 80px;
+				left: 123px;
+			}
+			.evaluate .s-three{
+				font-size: 15px;
+				color: #646464;
+				position: absolute;
+				top: 80px;
+				left: 253px;
+			}
+			.evaluate .s-four{
+				font-size: 15px;
+				color: #646464;
+				position: absolute;
+				top: 80px;
+				left: 360px;
+			}
+			/*单选框*/
+			.evaluate .kuang-one{
+				width: 18px;
+				height: 18px;
+				position: absolute;
+				top: 115px;
+				left: 143px;
+				cursor: pointer;
+				border: 1px solid #ccc;
+				border-radius: 2px;
+			}
+			
+			.evaluate .kuang-two{
+				width: 18px;
+				height: 18px;
+				position: absolute;
+				top: 115px;
+				left: 258px;
+				cursor: pointer;
+				border: 1px solid #ccc;
+				border-radius: 2px;
+			}
+			.evaluate .kuang-three{
+				width: 18px;
+				height: 18px;
+				position: absolute;
+				top: 115px;
+				left: 373px;
+				cursor: pointer;
+				border: 1px solid #ccc;
+				border-radius: 2px;
+			}
+			.evaluate .disease-box{
+				width: 766px;
+				height: 130px;
+				position: absolute;
+				top: 200px;
+				left: 0px;
+			}
+			.evaluate .disease-box .symptom-text{
+				font-size: 15px;
+				color: #353535;
+			}
+			.evaluate .disease-box .tag-box{
+				width: 530px;
+				height: 85px;
+				position: absolute;
+				top: 0px;
+				left: 107px;
+			}
+			.evaluate .disease-box .tag-box span{
+				display: inline-block;
+				width: 123px;
+				height: 35px;
+				font-size: 15px;
+				color: #646464;
+				line-height: 35px;
+				text-align: center;
+				background: #EDEDED;
+				border-radius: 3px 3px 3px 3px;
+				margin: 0px 2px 10px 2px;
+			}
+			.evaluate .disease-box input{
+				width: 451px;
+				height: 35px;
+				position: absolute;
+				top: 90px;
+				left: 110px;
+				background: #EDEDED;
+				border: 0 none;
+				outline-style: none;
+			}
+			.evaluate .disease-box .btn-text{
+				width: 60px;
+				height: 35px;
+				border-radius: 17px;
+				background: #1BBD8F;
+				line-height: 35px;
+				text-align: center;
+				font-size: 15px;
+				color: #fff;
+				cursor: pointer;
+				position: absolute;
+				top: 90px;
+				right: 140px;
+			}
+			.evaluate .reply-box{
+				position: absolute;
+				top: 180px;
+				left: 0px;
+				width: 840px;
+				height: 700px;
+			}
+			.evaluate .reply-box .liuyan-text{
+				font-size: 15px;
+				color: #353535;
+			}
+			.evaluate .reply-box .liuyan-left{
+				width: 645px;
+				height: 143px;
+				margin: 0 auto;
+				font-size: 15px;
+				color: #646464;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}
+			.evaluate .reply-box .liuyan-right{
+				width: 645px;
+				height: 143px;
+				margin: 0 auto;
+				font-size: 15px;
+				color: #646464;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}
+			.evaluate .reply-box .liuyan-box{
+				width: 650px;
+				margin: 0 auto;
+			}
+			.evaluate .reply-box .liuyan-box-content{
+				float: right;
+				width: 245px;
+				font-size: 15px;
+				color: #646464;
+				margin-top: 13px;
+				margin-right: 14px;
+			}
+			.evaluate .reply-box .liuyan-box-one{
+				display: inline-block;
+				width: 312px;
+				height: 143px;
+				margin: 5px 5px;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}
+			
+			.evaluate .reply-box .liuyan-box-one .radio-icon{
+				display: inline-block;
+				width: 18px;
+				height: 20px;
+				border: 2px solid #979797;
+				border-radius: 50%;
+				cursor: pointer;
+				margin: 13px 12px;
+			}
+			.evaluate .reply-box .zhiban-name{
+				float: right;
+				font-size: 15px;
+				color: #353535;
+				padding-top: 23px;
+				padding-right: 120px;
+			}
+			.evaluate .reply-box .submit{
+				width: 217px;
+				height: 50px;
+				margin: 100px auto;
+				background: #1BBD8F;
+				border-radius: 50px;
+				cursor: pointer;
+				font-size: 20px;
+				color: #fff;
+				text-align: center;
+				line-height: 50px;
+			}
+			.show{
+				display: block !important;
+			}
+			.hide{
+				display: none !important;
+			}
+			.bluecolor{
+				background: #3757AD;
+			}
+			/*基本结论点击背景颜色*/
+			.bglvse{
+				background: #1BBD8F;
+				border: 1px solid #1BBD8F !important;
+			}
+			/*疑似病症点击背景颜色*/
+			.bzbgcolor{
+				background: #1BBD8F !important;
+				color: white !important;
+			}
+			/*留言模板点击背景颜色*/
+			.mbbgcolor{
+				background: #1BBD8F;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box" id="app">
+			<div class="content-box">
+				<div class="left">
+					<img src="img-room/医生头像.png" />
+					<div class="text-name">
+						Hi!<br />
+						王医生
+					</div>
+					<div class="work-table" style="background-color: #2C2F37;">
+						<img src="img-room/排班表.png" alt=""/><br />
+						排班表
+					</div>
+					<div class="watch-room">
+						<img src="img-room/值班室.png" alt="" /><br />
+						值班室
+						<span class="new-mess" :class="{hide:records.length == 0}">
+							{{records.length}}
+						</span>
+					</div>
+				</div>
+				<div class="work-right">
+					<div class="up-time" v-if="arrange === undefined">
+						无数据...
+					</div>
+					<div class="up-time" v-else>
+						上次值班&nbsp;&nbsp;{{arrange.date}}&nbsp;&nbsp;&nbsp;&nbsp;
+						12:00 - 13:00
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						处理&nbsp;&nbsp;
+						<span class="num">30</span>&nbsp;&nbsp;
+						条
+					</div>
+					<div class="down-time" v-if="arrange === undefined">
+						无数据...
+					</div>
+					<div class="down-time" v-else>
+						下次值班时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						2017-01-03<br />
+						<span class="bigtime">09:00 - 10:00</span>
+					</div>
+					<!--<div class="paiban-text">排班表</div>-->
+					<div class="change-day">
+						<ul>
+							<li v-for="arr, index in arrange" :class="{active:index == current}" @click="yyyyy(index)">{{time(arr.date)}}</li>
+						</ul>
+					</div>
+					<ul class="paiban-left">
+						<li v-for="item, index in paibanleft" @click="ppppp(index,item)">{{period(item)}}
+							<span v-if="isPai(item)">排班</span>
+							<img v-else src="img-room/成功排班.png" alt="" />
+						</li>
+					</ul>
+					<ul class="paiban-right">
+						<li v-for="item, index in paibanright" @click="ppppp(index+12,item)">{{period(item)}}
+							<span v-if="isPai(item)">排班</span>
+							<img v-else src="img-room/成功排班.png" alt="" />
+						</li>
+					</ul>
+				</div>
+				<div class="watch-right">
+					<ul class="left-box">
+						<div class="renwu">任务栏</div>
+						<li v-for="rec, index in records" :class="{bluecolor:index == bgColor}" @click='dddd(rec, index)'>
+							<span class="type-img" v-if="rec.type == '在线问诊'">
+								<img src="img-room/小在线问诊 copy.png" alt="" class="icon"/>
+							</span>
+							<span class="type-img" v-else>
+								<img src="img-room/心电图 copy 3@2x.png" alt="" class="icon"/>
+							</span>
+							<span class="type-text">{{rec.type}}
+								<span class="newhot" :class="{hide:records.length < 0}"></span>
+							</span>
+							<span class="name-text">{{rec.patient.name}}</span>
+							<span class="sex-text" v-if="rec.patient.sex == 'M'">
+								男
+							</span>
+							<span class="sex-text" v-else>
+								女
+							</span>
+							<span class="age-text">{{age(rec)}}</span>
+						</li>
+					</ul>
+					<div class="right-box" :class="{hide: display_i}">
+						<div class="inquiry-state">
+							<div class="asking-text">问诊状态</div>
+							<ul>
+								<li>患者提问</li>
+								<li>接诊</li>
+								<li>问诊中</li>
+								<li>问诊结束</li>
+							</ul>
+						</div>
+						<div class="dialog-box">
+							<img src="img-room/搜狗截图20170727110653.png" class="head-image" alt="" />
+							<div class="sanjiao"></div>-
+							<div class="mess-box">
+								<span class="title-text">病情描述</span>
+								<div class="body-case"><span>王医生，最近心脏不太舒服，总是心跳突然加快，我在心跳加快时记录下了心电图，请给我看看</span></div>
+								<a href="myPhrs.html" target="_blank">我的健康记录</a><br />
+								<a href="" target="_blank">我附加的一条心电/血压/血糖记录</a>
+							</div>
+							<p class="hint-text">若您在15分钟之内未接诊，该问诊将自动转诊</p>
+							<a href="#" class="btn">接诊</a>
+							<div class="chat-box">
+								<input type="text" placeholder="请输入内容..."/>
+								<div class="image-box"><img src="img-room/搜狗截图20170727175210.png" alt="" /></div>
+								<span class="submit">答复</span>
+							</div>
+						</div>
+					</div>
+					<div class="jiedu-box" :class="{hide: display_e}">
+						<div class="health-box">
+							<div class="user-mes">
+								<img src="img-room/医生头像.png" alt="" />
+								<span class="Myname">{{guoquan.patient.name}}的心电图</span>
+							</div>
+						</div>
+						<div class="myinfo-box">
+							<a>基本档案</a>
+							<div class="left-list">
+								<ul>
+									<li >
+										姓名：<span>{{guoquan.patient.name}}</span>
+									</li>
+									<li>
+									性别：<span v-if="guoquan.patient.sex == 'M'">
+											男
+										</span>
+										<span v-else>
+											女
+										</span>
+									</li>
+									<li>
+										身高：<span>{{guoquan.patient.height}}cm</span>
+									</li>
+									<li>
+										体重：<span>{{guoquan.patient.weight}}kg</span>
+									</li>
+								</ul>	
+							</div>
+							<div class="right-list">
+								<ul>
+									<li v-if="guoquan.patient.sex == 'M'">
+										暂无...
+									</li>
+									<li v-else>
+										婚育史&nbsp;&nbsp;&nbsp;：<span>未婚</span>
+									</li>
+									<li>药物过敏：<span>{{guoquan.patient.drug_allergy_histories}}</span></li>
+									<li>个人习惯：<span>{{guoquan.patient.personal_habits}}</span></li>
+									<li>家族病史：<span>{{guoquan.patient.family_medical_histories}}</span></li>
+									<li>当前病症：<span>{{guoquan.patient.current_disease}}</span></li>
+								</ul>	
+							</div>
+						</div>
+						<div class="xindian-box">
+							<a>心电图</a>
+							<span class="update-time">2小时前更新</span>
+							<img src="img-jiedu/kgh.png" alt="" class="icon"/>
+							<div class="condition">
+								<ul>
+									<li>
+										<span class="s1">基本正常</span>
+										<span class="s2">{{guoquan.record.events.date}}</span>
+										<span class="s3">12:13</span>
+										<span class="s4">|</span>
+										<span class="s5">30秒</span>
+										<span class="s6">|</span>
+										<span class="s7">心率{{guoquan.record.heart_rate}}</span>
+									</li>
+									<li>
+										<span class="p1">症状：无</span>
+										<span class="p2">运动：{{guoquan.record.events.status}}</span>
+										<span class="p3">饮食：{{guoquan.record.food.records}}</span>
+										<span class="p4">用药：{{guoquan.record.medication.records}}</span>
+										<span class="p5">补充信息：{{guoquan.record.note}}</span>
+									</li>
+								</ul>
+							</div>
+							<div class="chakan">查看心电图详情</div>
+						</div>
+						<div class="evaluate">
+							<div>
+								
+							</div>
+							<span class="s-one">基本结论</span>
+							<img src="img-room/健康评估@3x.png" alt=""  class="icon-one"/>
+							<img src="img-room/心电－异常@3x.png" alt="" class="icon-two"/>
+							<img src="img-room/kgh.png" alt=""  class="icon-three"/>
+							<span class="s-two">基本正常</span>
+							<span class="s-three">异常</span>
+							<span class="s-four">不可读</span>
+							<ul>
+								<li>
+									<img src="img-jiedu/122.png" alt=""  @click="ccccc(0)" :class="{bglvse:bgbgbg == 0}" class="kuang-one" />
+								</li>
+								<li>
+									<img src="img-jiedu/122.png" alt=""  @click="ccccc(1)" :class="{bglvse:bgbgbg == 1}" class="kuang-two" />
+								</li>
+								<li >
+									<img src="img-jiedu/122.png" alt="" @click="ccccc(2)" :class="{bglvse:bgbgbg == 2}" class="kuang-three" />
+								</li>
+							</ul>
+							<!--<div class="disease-box">
+								<span class="symptom-text">疑似病症</span>
+								<div class="tag-box">
+									<span @click="bingzhengdianji(0)" :class="{bzbgcolor:bingzheng['0']}">窦性心动过速</span>
+									<span @click="bingzhengdianji(1)" :class="{bzbgcolor:bingzheng['1']}">窦性心动过缓</span>
+									<span @click="bingzhengdianji(2)" :class="{bzbgcolor:bingzheng['2']}">窦性停搏</span>
+									<span @click="bingzhengdianji(3)" :class="{bzbgcolor:bingzheng['3']}">期前收缩(早搏)</span>
+									<span @click="bingzhengdianji(4)" :class="{bzbgcolor:bingzheng['4']}">异位性心动过速</span>
+									<span @click="bingzhengdianji(5)" :class="{bzbgcolor:bingzheng['5']}">传导阻滞</span>
+									<span @click="bingzhengdianji(6)" :class="{bzbgcolor:bingzheng['6']}">逸搏</span>
+								</div>
+								<input type="text" placeholder="输入其它病症" /><div class="btn-text">确定</div>
+							</div>-->
+							<div class="reply-box">
+								<span class="liuyan-text">医生留言</span>
+								<div class="liuyan-left" :class="{hide:anomaly_two}">
+									{{ verdict.normal_remark }}
+								</div>
+								<ul class="liuyan-box" :class="{hide:anomaly_one}">
+									<li class="liuyan-box-one" v-for="ver,index in verdict.remarks">
+										<span class="radio-icon" :class="{mbbgcolor:index == bggreen}" @click="muban(index)"></span>
+										<span class="liuyan-box-content">
+											{{ver}}
+										</span>
+									</li>
+								</ul>
+								<div class="liuyan-right" :class="{hide:anomaly_three}">
+									{{verdict.error_remark}}
+								</div>
+								<div class="zhiban-name">值班医生：邵东</div>
+								<div class="submit" @click="fasong">发送</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="jquery-1.11.1.js"></script>
+	<script>		
+		$(function () {
+			var watch = $(".watch-right");
+			var work = $(".work-right");
+			
+			//排班表jquery部分
+            $(".work-table").click(function(){
+            	$(this).css("background-color",'#2C2F37'); 
+            	$(".watch-room").css("background-color",''); 
+       			work.show();
+       			watch.hide();
+            });
+            
+            
+	      	//值班室jquery部分
+            $(".watch-room").click(function(){
+            	$(this).css("background-color",'#2C2F37');
+            	$(".work-table").css("background-color",'');
+            	work.hide();
+            	watch.show();
+            })
+        });
+	</script>
+	<script src="https://cdn.bootcss.com/vue-resource/1.3.4/vue-resource.min.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+		Vue.use(VueResource);
+		var app = new Vue({
+			el:'#app',
+			data:{
+				// remarks:null,
+//				bingzheng:{
+//					'0':false,
+//					'1':false,
+//					'2':false,
+//					'3':false,
+//					'4':false,
+//					'5':false,
+//					'6':false,
+//					'7':false
+//				},
+				verdict:{
+					error_remark:"",
+					normal_remark:"",
+					remarks:[]
+				},
+				//接收基本结论
+				jielun:null,
+				mbmbmb:-1,
+				bgbgbg:-1,
+				selected: -1,
+				display_i: true,
+				display_e: true,
+				anomaly_three:true,
+				anomaly_one:true,
+				anomaly_two:false,
+				dqtime:"",
+				current:0,
+				bggreen:null,
+				bgColor:null,
+				id: "597701a16d13f0509647f518",
+				paibanleft:[],
+				paibanright:[],
+				arrange: [
+					{
+						date: null,
+						periods:[]
+					},{
+						date: null,
+						periods:[]
+					},{
+						date: null,
+						periods:[]
+					}
+				],
+				guoquan:{
+					patient:{
+						name:"",
+						sex:"",
+						height:0,
+						weight:0,
+						drug_allergy_histories:null,
+						personal_habits:null,
+						family_medical_histories:null,
+						current_disease:null
+					},
+					record:{
+						events:{
+							date:null,
+							status:null
+						},
+						food:{
+							records:null
+						},
+						medication:{
+							records:null
+						},
+						heart_rate:null,
+						note:null
+					},
+				},
+				records:[],
+			},
+			methods:{
+				selectFun: function(){
+					if(this.selected == -1)
+						return {
+						
+						patient: {},record:{
+							
+							food:{
+								
+							},
+							medication:{
+								
+							},
+							events:{
+								
+							}
+						}};
+					return curRecord;
+				},
+				time:function(date){
+					if(date){
+						//split：把字符串分割成字符串数组
+						var sss = date.split("-");
+						return sss[1]+"月"+sss[2]+"日";
+					}else{
+						return "";
+					}
+				},
+				//值班室年龄
+				age:function(rec) {
+					var birth = rec.patient.birthday.split("-");
+					var dqtime = this.dqtime.split("-");
+					return parseInt(dqtime[0]) - parseInt(birth[0]);
+				},
+				//排班列表时间
+				period:function(item){
+					var h1 = item.hour;
+					var h2 = h1+1;
+					if(h1<10){
+						h1="0"+h1;
+					}
+					if(h2<10){
+						h2="0"+h2;
+					}
+					return ""+h1+":00-"+h2+":00";
+				},
+				
+				isPai: function(item) {
+					if(-1 == item.doctors.indexOf(this.id)) return true;
+					return false;
+				},
+				
+				//点击时间
+				yyyyy: function (index){
+					this.paibanleft = this.arrange[index].periods.slice(0,12);
+					this.paibanright = this.arrange[index].periods.slice(12);
+					this.current = index;
+				},
+				dddd: function(rec, index){
+					this.bgColor = index;
+					this.selected = index;
+					if(rec.type == '心电图解读'){
+						this.xindaintudata = {}
+						this.display_e = false;
+						this.display_i = true;
+					}else{
+						this.display_e = true;
+						this.display_i = false;
+					}
+					if(rec.type == '心电图解读') {
+						this.$http.get("http://apistage.wenanle.com/ecg-diagnose/remarks")
+						.then(function(res){
+							console.log(res);
+							var temp = {}; //this.verdict.normal_remark
+							var name = rec.patient.name;
+							var heart = rec.patient.heart_rate;
+							temp.normal_remark = res.body.normal_remark.replace(/<name>/g, name);
+							temp.error_remark = res.body.error_remark.replace(/<name>/g, name);
+							res.body.remarks.forEach(function(remark, i){
+								res.body.remarks[i] = remark.replace(/<name>/g, name).replace(/<heart>/g, heart);
+							})
+							temp.remarks = res.body.remarks;
+							
+							// 给verdict赋值
+							this.verdict = temp;
+							this.guoquan =  rec;
+							
+						})
+						.catch(function(){
+							this.guoquan = rec;
+						})
+					
+					}else{
+						this.guoquan = rec;
+					}
+				},
+				//点击排班
+				ppppp: function (index,item) {
+					var date = "";
+					if(this.current == 0) {
+						date = "TODAY";
+					}else if(this.current == 1) {
+						date = "TOMORROW";
+					}else{
+						date = "AFTER";
+					}
+					if(this.isPai(item)) {
+						this.$http.post("http://apistage.wenanle.com/arrangement/597701a16d13f0509647f518/arrange",{
+							time:date,
+							hour:index
+						})
+						.then(function (res) {
+							alert('排版成功');
+							this.load();
+						})
+						.catch(function (err) {
+							alert('给华强一个面子')
+						})
+					}else{
+						this.$http.post("http://apistage.wenanle.com/arrangement/597701a16d13f0509647f518/unarrange",{
+							time:date,
+							hour:index
+						})
+						.then(function (res) {
+							alert('取消成功');
+							this.load();
+						})
+						.catch(function (err) {
+							alert('给华强一个面子')
+						})
+					}
+					
+				},
+				//点击基本结论框框
+				ccccc:function(index) {
+					if(index == 0) {
+						this.anomaly_three = true;
+						this.anomaly_two = false;
+						this.anomaly_one = true;
+						this.jielun = "NORMAL";
+					}else if(index == 1) {
+						this.anomaly_three = true;
+						this.anomaly_one = false;
+						this.anomaly_two = true;
+						this.jielun = "UNREADABLE";
+					}else{
+						this.anomaly_three = false;
+						this.anomaly_two = true;
+						this.anomaly_one = true;
+						this.jielun = "ABNORMAL";
+					}
+					this.bgbgbg = index;
+				},
+				//疑似病症方法
+//				bingzhengdianji:function(index){
+//					this.bingzheng[index] = !this.bingzheng[index];
+//				},
+
+				//值班室热信息方法
+				hot:function(records) {
+					var aaa = records.diagnoses;
+					for(var i=0;i<aaa.length;i++) {
+						return aaa[i];
+					}
+				},
+				//医生留言模板点击背景颜色
+				muban:function(index) {
+					this.bggreen = index;
+					// this.remark = ver;
+				},
+				//点击发送
+				fasong:function() {
+					this.$http.post("http://apistage.wenanle.com/ecg-diagnose/58b00ac3f9576c3ed5578b65/reply",{
+						conclusion :this.jielun,
+						suspicions:[],
+						remark:this.verdict.remarks[this.bggreen]
+					},function(err,data){
+						if(err) {
+							alert("给华强一个面子");
+						}else{
+							alert("发送成功!");
+						}
+					})
+				},
+				load: function() {
+					this.$http
+					.get("http://apistage.wenanle.com/arrangement/597701a16d13f0509647f518")
+					.then(function (res) {
+						console.log(res);
+						this.arrange = res.body.arrangements;
+						this.dqtime = res.body.arrangements[0].date;
+						this.yyyyy(this.current);
+					})
+				},
+				watch: function() {
+					this.$http
+					.get("http://apistage.wenanle.com/arrangement/597701a16d13f0509647f518/jobs")
+					.then(function (data) {
+						console.log(data);
+						if(data.body.inquiries.length >0) {
+							for(var i=0;i<data.body.inquiries.length;i++) {
+								var inquiry = data.body.inquiries[i];
+								inquiry.type = "在线问诊";
+								this.records.push(inquiry);
+							}
+						}
+						if(data.body.diagnoses.length >0) {
+							for(var i=0;i<data.body.diagnoses.length;i++) {
+								var diagnoy = data.body.diagnoses[i];
+								this.xduserid = diagnoy.id;
+								diagnoy.type = "心电图解读";
+								this.records.push(diagnoy);
+							}
+						}
+						var a = this.records[0];
+						var clone2 = JSON.parse(JSON.stringify(a));
+						clone2.patient.name = '蠢货';
+						clone2.patient.weight = '90';
+						clone2.patient.height = '165';
+						clone2.patient.sex = 'G';
+						clone2.patient.birthday = '1996-05-08';
+						clone2.patient.personal_habits = '[ "抽烟", "喝酒", "烫头" ]';
+						clone2.record.events.status = '重度运动';
+						clone2.record.food.records = '豆包油条';
+						clone2.record.medication.records = '开药';
+						var clone = JSON.parse(JSON.stringify(a));
+						clone.type = '在线问诊';
+						this.records.push(clone);
+						this.records.push(clone2);
+					})
+				},
+				//获取问诊留言列表
+			},
+			created: function(){
+				this.load();
+				this.watch();
+			}
+		})
+	</script>
+</html>

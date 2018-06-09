@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, fieldset, legend, img {
+            margin: 0;
+            padding: 0;
+        }
+        .header_box{
+            width: 100%;
+            height: 57px;
+            background: #fff;
+            border-bottom: 1px solid #23c2aa;
+        }
+        .content_box{
+            margin: 0 auto;
+            width: 1200px;
+            height: 57px;
+        }
+        .content_box img{
+            float: left;
+            margin-right: 200px;
+            width: 144px;
+            height: 57px;
+            line-height: 57px;
+        }
+        .content_box ul li{
+            float: left;
+            list-style: none;
+            cursor: pointer;
+        }
+        .content_box ul li a:hover{
+            border-bottom: 1px solid #23c2aa;
+            z-index: 220;
+        }
+        .content_box ul li a{
+            position: relative;
+            display: block;
+            padding: 0 30px;
+            height: 57px;
+            line-height: 57px;
+            text-decoration: none;
+            overflow: hidden;
+            font-size: 18px;
+            color: #333333;
+        }
+        .content_box ul li a:hover,
+        .content_box ul li a.current{
+            color: #23c2aa;
+        }
+        .content_box ul li .box{
+            position: absolute;
+            top: 57px;
+            left: 0px;
+            padding-left: 200px;
+            width: 100%;
+            height: 150px;
+            background: #f5f5f5;
+            opacity: 0.9;
+            display: none;
+            z-index: 22;
+        }
+        .content_box ul li .box li a{
+            display:block;
+            height:50px;
+            /* float:left; */
+            color:#000;
+            border:none;
+            line-height:50px;
+            font-size: 15px;
+            background:none;
+        }
+
+
+        .ddhf{
+            width:100%;
+            height:600px;
+        }
+        .dhf{
+            margin: 0 auto;
+            position:relative;
+        }
+        .dhf .nhftp li{
+            float:left;
+            margin: 0 auto;
+            width:100% !important;
+            height:500px;
+            list-style-type:none;
+        }
+        /* 轮播按钮 */
+        .dhf .nhfsz{
+            width:55px;
+            height:20px;
+            position:absolute;
+            left:44%;
+            bottom:0px;
+        }
+        .dhf .nhfsz li{
+            float:left;
+            width:10px;
+            height:10px;
+            background:#0099ff;
+            margin-left:5px;
+            list-style-type:none;
+        }
+        .dhf .nhfsz .on{
+            background:#ffcc00;
+        }
+        .vean_news{
+            /* margin-top: 50px; */
+            display: -webkit-flex;
+            width: 100%;
+            /* height: 400px; */
+            background: #fff;
+        }
+        .vean_news .left_box{
+            flex: 1;
+            width: 300px;
+            height: 400px;
+            border-left: 1px solid #eee;
+        }
+        .vean_news .left_box a img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+            width: 345px;
+            height: 205px;
+        }
+        .vean_news .left_text{
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 130px;
+            color: #333;
+            font-size: 20px;
+        }
+        .vean_news .midd_box{
+            flex: 1;
+            width: 300px;
+            height: 400px;
+            border-left: 1px solid #eee;
+        }
+        .vean_news .midd_box a img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+            width: 345px;
+            height: 205px;
+        }
+        .vean_news .midd_text{
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 160px;
+            color: #333;
+            font-size: 20px;
+        }
+        .vean_news .right_box{
+            flex: 1;
+            width: 300px;
+            height: 400px;
+            border-left: 1px solid #eee;
+        }
+        .vean_news .right_box a img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+            width: 345px;
+            height: 205px;
+        }
+        .vean_news .right_text{
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 270px;
+            color: #333;
+            font-size: 20px;
+        }
+        .bottom_box{
+            border-top: 1px solid #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header_box">
+        <div class="content_box">
+            <img src="./img/网站logo.png" alt="">
+            <ul>
+                <li>
+                    <a href="#" style="color:#23c2aa;">首页</a>
+                </li>
+                <li>
+                    <a href="#">产品与服务</a>
+                    <ul class="box">
+                        <li style="margin-left:330px;margin-top:10px;width:135px;">
+                            <div style="margin-left:40px;"><img style="width:50px;height:80px;" src="./问安官网/1_03.png" alt=""></div>
+                            <a href="E:\HBuilderProject\vean问安\问安官网3ecg硬件.html">问安心电仪</a>
+                        </li>
+                        <li>
+                            <a href="#">问安血压仪</a>
+                        </li>
+                        <li>
+                            <a href="#">问安血糖仪</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">问安健康APP</a>
+                    <ul class="box">
+                        <li style="margin-left:480px;"><a href="E:\HBuilderProject\vean问安\问安官网3心电.html">问安客户端</a></li>
+                        <li><a href="#">问安医生端</a></li>
+                        <li><a href="#">问安Holter读图</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">用户登录</a>
+                    <ul class="box">
+                        <li style="margin-left:640px;"><a href="#">问安健康档案</a></li>
+                        <li><a href="#">问安医生值班室</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">加入我们</a>
+                    <ul class="box">
+                        <li style="margin-left:700px;">
+                            <a href="#">加入问安</a>
+                        </li>
+                        <li><a href="#">渠道伙伴</a></li>
+                        <li><a href="#">解决方案伙伴</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="dhf">
+            <ul class="nhftp">
+                <li class="nhftp_one_li">
+                    <img style="width:100%;height:100%;" src="./问安官网/搜狗截图20180205005542.png" alt="">
+                </li>
+                <li>
+                    <img style="width:100%;height:100%" src="./问安官网/搜狗截图20180205005745.png" alt="">
+                </li>
+                <li>
+                    <img style="width:100%;height:100%;" src="./问安官网/搜狗截图20180205005935.png" alt="">
+                </li>
+            </ul>
+            <!-- <ul class="nhfsz">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul> -->
+    </div>
+    <div class="vean_news">
+            <div class="left_box fl">
+                <a href="#"><img src="./问安官网/搜狗截图20180202195525.png" alt=""></a>
+                <div class="left_text">人工智能解读</div>
+            </div>
+            <div class="midd_box fl">
+                <a href="#"><img src="./问安官网/搜狗截图20180202191742.png" alt=""></a>
+                <!-- <a href="#"><img src="./问安官网/搜狗截图20180204143441.png" alt=""></a> -->
+                <div class="midd_text">健康，从今天开始</div>
+            </div>
+            <div class="right_box fl">
+                <a href="#"><img src="./问安官网/u=3664608266,1403446078&fm=27&gp=0.jpg" alt=""></a>
+                <div class="right_text">亲情关怀，儿女随时在您身边</div>
+            </div>
+        </div>
+        <!-- 健康管理 -->
+        <div class="vean_controls">
+            <img src="./问安官网/搜狗截图20180202185734.png" alt="">
+        </div>
+        <!-- 问安底部 -->
+        <div class="bottom_box">
+            <img src="./问安官网/搜狗截图20180205212301.png" style="width:100%;height:100%;" alt="">
+        </div>
+</body>
+<script src="./jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./jquery.SuperSlide.2.1.1.js"></script>
+<script>
+$(function(){
+    var newLi = $('.content_box>ul>li');
+    newLi.mousemove(function(){
+        $(this).find("a").addClass(".current");
+        // $(this).find(".box").stop().slideDown();
+        $(this).find(".box").show();
+    })
+    newLi.mouseleave(function(){
+        $(this).find("a").removeClass(".current");
+        $(this).find(".box").hide();
+    })
+})
+$(".dhf").slide({
+	titCell:".nhfsz li",/*获取滚动区域*/
+	mainCell:".nhftp",/*获取执行区域*/
+	trigger:"mouseover",/*鼠标事件*/
+	autoPlay:true,/*自动滚动*/
+	effect:"fold",/*滚动效果*/
+    delayTime:2000
+});/*渐显时间*/
+</script>
+</html>

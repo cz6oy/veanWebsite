@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>问安心电</title>
+		<link rel="stylesheet" href="css/index2.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/ecg.css" />
+		<script src="js/vue.js"></script>
+		<script src="js/vueSet.js"></script>
+		<script>
+		//下拉菜单
+		$(document).ready(function() {
+			//需求：鼠标放到li上面，让他里面的Ul显示
+			var jqli = $(".nav-right>ul>li");
+				jqli.mouseenter(function() {
+				$(this).children("ul").stop().slideDown(150);
+			});
+				
+				jqli.mouseleave(function() {
+				$(this).children("ul").stop().slideUp(150);
+			});
+		});
+	</script>
+		</script>
+	</head>
+	<body>
+		<div class="title-content">
+			<!--首页顶部导航-->
+			<div class="nav">
+				<div class="w">
+					<div class="nav-left">
+						<a href="https://www.wenanle.com/" title="vean问安" target="_blank">vean问安</a>
+					</div>
+					<div class="nav-right">
+						<ul>
+							<li><a href="index.html">首页</a></li>
+							<li>
+								<a href="#" class="color-gerrn">产品</a>
+								<ul>
+	                				<li class="menu-item">
+	                					<div class="clearfixed">
+	                						<img src="img/心电仪-导航.png" alt="" />
+	                						<p>问安心电仪</p>
+	                					</div>
+	                					<div>
+	                						<img src="img/血糖仪-导航.png" />
+	                						<p>问安血糖仪</p>
+	                					</div>
+	                					<div>
+	                						<img src="img/血糖仪-导航.png" />
+	                						<p>问安血压仪</p>
+	                					</div>
+	                				</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">APP下载</a>
+								<ul>
+	                				<li class="menu-item">
+	                					<div class="clearfixed">
+	                						<img src="img/慢病管理-导航.png" alt="" />
+	                						<p>问安客户端</p>
+	                					</div>
+	                					<div>
+	                						<img src="img/好医生-导航.png" alt="" />
+	                						<p>问安好医生</p>
+	                					</div>
+	                				</li>
+	            				</ul>
+							</li>
+							<li><a href="#">关于我们</a></li>
+							<li><a href="#">加入我们</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--心电仪购买信息-->
+			<div class="ecg-info">
+				<div class="ecg-imgage">
+					<img src="img-ecg/1_03.png" alt="" />
+				</div>
+				<div class="ecg-text">
+					<p class="ecg-text-p1">问安心电仪</p>
+					<p class="ecg-text-p2">智能健康时代的"心脏体温计"</p>
+					<p class="ecg-text-p3">兼顾专业与科技感,送礼自用两相宜</p>
+					<p  id="app" class="ecg-text-p4">
+						<span class="ecg-text-s1">仅售</span>
+						<span class="ecg-text-s2">？？？</span>
+						<span class="ecg-text-s1">元</span>
+					</p>
+					<a href="" class="ecg-btn">立即购买</a>
+				</div>
+			</div>
+		</div>
+		<!-- 患者统计 -->
+		<div class="tongji-box">
+			<p class="tongji-text">为何需要关注心脏健康一一心血管疾病是第一杀手</p>
+			<div class="tongji-shuju">
+				<div class="shuju-1"></div>
+				<div class="shuju-2">亿人</div>
+				<div class="shuju-3"></div>
+				<div class="shuju-4">万人</div>
+				<div class="shuju-5"></div>
+				<div class="shuju-6">万人</div>
+				<div class="shuju-7"></div>
+				<div class="shuju-8">亿元</div>
+			</div>
+			<div class="tongji-jieshao">
+				<div class="jieshao-1">我国心血管疾病人群</div>
+				<div class="jieshao-2">心脏病人群</div>
+				<div class="jieshao-3">每年死于心血管病人群</div>
+				<div class="jieshao-4">每年心脑血管疾病医疗费用</div>
+			</div>
+		</div>
+		<!-- 随时随地心脏健康管理 -->
+		<div class="yufang">
+			<div class="text-1">随时随地地心脏健康管理</div>
+			<div class="text-2">个人预防</div>
+			<div class="text-3">及早筛选</div>
+			<div class="text-4">较早诊断</div>
+			
+		</div>
+		<!-- 问安心电仪属性 -->
+		<div class="shuxing">
+			<div class="shuxing-content">
+				<p class="text-1">问安心电能为您和家人做什么</p>
+				<p class="text-2">问安便携式综合导联心电仪，可随时随地满足用户对心脏功能的实时监控</p>
+				<div class="ecg-content">
+					<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/ecg/4_03.png" alt="">
+				</div>
+				<div class="icon-box">
+					<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/ecg/4_05.png" alt="">
+					<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/ecg/4_08.png" alt="">
+					<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/ecg/4_10.png" alt="">
+					<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/ecg/4_12.png" alt="">
+				</div>
+				<div class="text-3">103mmX38mmX9mm</div>
+				<div class="text-4">----------------------------------------------------------------------</div>
+				<div class="text-5">环保材质工艺，重量仅68g</div>
+				<div class="text-6">蓝牙和手机连接，实时上传云平台</div>
+				<div class="text-7">----------------------------------------------------------------------</div>
+				<div class="text-8">SD卡存储多达300小时的心电图数据</div>
+				<div class="text-9">专业的Holter实时监护模式</div>
+				<div class="text-10">----------------------------------------------------------------------</div>
+				<div class="text-11">全天候捕捉危险信号</div>
+				<div class="text-12">国家二类医疗器械</div>
+				<div class="text-13">----------------------------------------------------------------------</div>
+				<div class="text-14">最专业的家用心电采集设备</div>
+			</div>
+		</div>
+		<!-- 心电仪使用 -->
+		<div class="shiyong-box">
+			<div class="shiyong">
+				<p class="text-1">心电设备使用，两步即可完成，适配各种环境</p>
+				<p class="text-2"><span>Step1</span>&nbsp;&nbsp;使用可穿戴式硬件设备</p>
+				<div class="shiyong-img"><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/ecg/5_03.png" alt=""></div>
+				<div class="fangfa-box">
+					<p class="text-3">方法1：电极片测量</p>
+					<p class="text-4">方法2：胸贴测量</p>
+					<p class="text-5">方法2：手持测量</p>
+				</div>
+				<div class="iphone-box">
+					<p class="text-6"><span>Step2</span>手机问安APP查询详情</p>
+					<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/ecg/5_07.png" alt="">
+				</div>
+			</div>
+		</div>
+		<!--首页底部导航-->
+		<div class="footer">
+			<div class="w">
+				<div class="footer-left">
+					<img src="img/未命名-1.png" alt="vean问安" />
+				</div>
+				<div class="footer-middle">
+					<p class="footer-text1">山西博迪安泰信息技术有限公司</p>
+					<p class="footer-text2">
+						Copyright©2015 wenanle.com All Rights Reserved<br />
+						晋ICP备15004007号-1
+					</p>
+					<img src="img/gh.png" alt="国徽" />
+					<a href="#" class="footer-text3">
+						晋公网安备 14010502050185号
+					</a>
+				</div>
+				<div class="footer-right">
+					<ul>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">联系我们</a></li>
+						<li><a href="#">加入我们</a></li>
+					</ul>
+					<span class="s1">客服热线：<span class="s2">400-001-5121</span></span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

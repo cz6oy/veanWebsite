@@ -1,0 +1,630 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        *{
+            /*background: red;*/
+            /*position: absolute;*/
+        }
+        ul li {
+        	list-style: none;
+        }
+		/* 折线图样式 */
+#bpline{
+            left: 80px;
+            right: 70px;
+            top: 50px;
+            position: absolute;
+            height: 200px;
+        }
+        #bpLineWrap{
+            width: 100%;
+            top: 72px;
+            position: absolute;
+        }
+        #ppLineWrap{
+            width: 100%;
+            top: 355px;
+            position: absolute;
+        }
+
+        #ppline{
+            left: 80px;
+            right: 70px;
+            position: absolute;
+            height: 200px;
+            top: 50px;
+        }
+
+        #bsline{
+            left: 80px;
+            right: 70px;
+            position: absolute;
+            height: 200px;
+            top: 122px;
+        }
+        .linecon{
+            top: 0;
+            height: 200px;
+            position: absolute;
+            left: 30px;
+            right: 0px;
+            overflow-x: scroll;
+        }
+        .linecon svg{
+              top: 0;
+              position: absolute;
+              left: 0;
+          }
+        /*.axisx{*/
+            /*width: 300px;*/
+        /*}*/
+        .axis{
+            width: 100px;
+            position: absolute;
+            height:200px;
+            left: 0px;
+            top: 0;
+        }
+
+        .axis1{
+            width: 100px;
+            position: absolute;
+            height:200px;
+            left: 570px;
+            top: 0;
+        }
+        .axisx path,
+        .axisx line,
+        .axis1 path,
+        .axis1 line,
+        .axis path,
+        .axis line{
+            position: absolute;
+            top: 0;
+            width: 2px;
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+        .axisx text,
+        .axis1 text,
+        .axis text {
+            font-family: sans-serif;
+            font-size: 10px;
+        }
+        .axis1 path{
+            fill: none;
+            stroke: none;
+        }
+        .axis1 line{
+
+            fill: none;
+            stroke: none;
+        }
+
+
+
+
+        /*/!*血压线样式*!/*/
+        .mBpScrollerPart{
+             top: 0;
+             height: 200px;
+             position: absolute;
+             left: 30px;
+             right: 0px;
+             overflow-x: scroll;
+            overflow-y: hidden;
+            scroll:"no"
+         }
+        .mBpScrollerPart svg{
+            top: 0;
+            position: absolute;
+            left: 0;
+        }
+		/*血压列表信息样式*/
+		.bpsMainGroup .listInfo{
+			width: 1033px;
+			height: 44px;
+			border-top: 1px solid #ccc;
+			margin: 0 auto;
+			line-height: 44px;
+			cursor: pointer;
+		}
+		.bpsMainGroup .listInfo:hover{
+			background-color: #ECEEF2;
+		}
+		.bpsMainGroup .scroll .listInfo img{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin: 0px 12px 0px 15px;
+		}
+		.bpsMainGroup .scroll .listInfo span.list-s1{
+			display: inline-block;
+			width: 30px;
+			height: 21px;
+			font-size: 15px;
+			color: #353535;
+			margin-right: 16px;
+		}
+		.bpsMainGroup .scroll .listInfo span.list-s2{
+			display: inline-block;
+			width: 59px;
+			height: 25px;
+			font-size: 20px;
+			font-weight: 900;
+			color: #464646;
+		}
+		.bpsMainGroup .scroll .listInfo span.list-s3{
+			display: inline-block;
+			width: 40px;
+			height: 15px;
+			font-size: 13px;
+			color: #646464;
+			margin: 0px 29px 0px 10px;
+		}
+		.bpsMainGroup .scroll .listInfo span.list-s4{
+			display: inline-block;
+			width: 48px;
+			height: 21px;
+			font-size: 15px;
+			color: #353535;
+			margin-right: 28px;
+		}
+		.bpsMainGroup .scroll .listInfo span.list-s5,
+		.bpsMainGroup .scroll .listInfo span.list-s6,
+		.bpsMainGroup .scroll .listInfo span.list-s7{
+			display: inline-block;
+			/*width: 700px;*/
+			height: 21px;
+			font-size: 15px;
+			color: #777;
+		}
+		.bpsMainGroup .scroll{
+			overflow-y: scroll;
+			height: 568px;
+		}
+        /*/!*脉压差样式*!/*/
+        .mPpScrollerPart{
+            top: 0;
+            height: 200px;
+            position: absolute;
+            left: 30px;
+            right: 0px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll:"no"
+        }
+        .mPpScrollerPart svg{
+            top: 0;
+            position: absolute;
+            left: 0;
+        }
+
+
+
+
+        /*通用样式*/
+        .mBsScrollerPart{
+            top: 0;
+            height: 200px;
+            position: absolute;
+            left: 30px;
+            right: 0px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll:"no";
+        }
+        .mBsScrollerPart svg{
+            top: 0;
+            position: absolute;
+            left: 0;
+        }
+        /*.mBpGridline{*/
+
+        /*}*/
+        /*.mBpReferline{*/
+
+        /*}*/
+
+        .YAaxisL{
+            width: 100px;
+            position: absolute;
+            height:200px;
+            left: 0px;
+            top: 0;
+        }
+        .YAaxisR{
+            width: 100px;
+            position: absolute;
+            height:200px;
+            right: -70px;
+            top: 0;
+        }
+        .XAxis text,
+        .YAaxisL text,
+        .YAaxisR text {
+            font-family: Helvetica;
+            font-size: 12px;
+            stroke:rgba(119,119,119,1);
+        }
+        .XAxis path{
+            position: absolute;
+            top: 0;
+            width: 2px;
+            fill: none;
+            stroke: rgba(193,193,193,1);
+            shape-rendering: crispEdges;
+        }
+        .XAxis line{
+            position: absolute;
+            top: 0;
+            width: 2px;
+            fill: none;
+            stroke: none;
+            shape-rendering: crispEdges;
+        }
+        .YAaxisL path{
+            position: absolute;
+            top: 0;
+            width: 2px;
+            fill: none;
+            stroke: rgba(193,193,193,1);
+            shape-rendering: crispEdges;
+        }
+        .YAaxisL line{
+            position: absolute;
+            top: 0;
+            width: 2px;
+            fill: none;
+            stroke: none;
+            shape-rendering: crispEdges;
+        }
+        .YAaxisR path{
+            fill: none;
+            stroke: none;
+        }
+        .YAaxisR line{
+            fill: none;
+            stroke: none;
+        }
+
+        #bsTimeGroup,
+        #bpTimeGroup{
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 14px;
+            width: 250px;
+            height: 30px;
+            position: absolute;
+        }
+        #bpGroup{
+            float: left;
+            position: absolute;
+            left: 61px;
+            right: 60px;
+            height: 675px;
+            /*box-shadow: 2px 2px black;*/
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.25);
+        }
+        #bsGroup{
+            top: 700px;
+            /*float: left;*/
+            position: absolute;
+            left: 61px;
+            right: 60px;
+            height: 410px;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.25);
+        }
+
+        .bpsTag{
+            position: absolute;
+            top: 6px;
+            left: 0;
+            text-align: center;
+            width: 100px;
+            height: 34px;
+            padding-right: 17px;
+            line-height: 34px;
+            background: rgba(87,129,235,1);
+            color: white;
+            border-radius: 0 17px 17px 0;
+        }
+        .bpstitle{
+            font-size: 15px;
+            margin-left: 80px;
+            color: rgba(100,100,100,1);
+        }
+        .bsPeriodGroup{
+            position: absolute;
+            left: 80px;
+            top: 72px;
+            width: 209px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: rgba(27,189,143,1);
+            font-size: 15px;
+        }
+        .bpsMainGroup{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 46px;
+            bottom: 0;
+        }
+        #bpDataChoose{
+            position: absolute;
+            left: 270px;
+            top: 6px;
+            width: 120px;
+            height: 34px;
+        }
+        #bsDataChoose{
+            position: absolute;
+            left: 270px;
+            top: 6px;
+            width: 180px;
+            height: 34px;
+        }
+
+        #ringCanvas{
+            /*background: red;*/
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+<div id="bpGroup">
+    <div class="bpsTag">血压</div>
+    <div id="bpDataChoose"></div>
+
+    <!--主内容替换区域-->
+    <div class="bpsMainGroup" id="bpLineGroup">
+        <div id="bpTimeGroup"></div>
+        <div id="bpLineWrap">
+            <div class="bpstitle">
+                收缩压和舒张压
+            </div>
+            <div id="bpline"></div>
+        </div>
+        <div id="ppLineWrap">
+            <div class="bpstitle">
+                脉压差
+            </div>
+            <div id="ppline"></div>
+        </div>
+    </div>
+    <div class="bpsMainGroup" id="bpListGroup">
+    
+    </div>
+</div>
+
+<div id="bsGroup">
+    <div class="bpsTag">血糖</div>
+
+    <div id="bsDataChoose"></div>
+
+    <!--主内容替换区域-->
+    <div class="bpsMainGroup" id="bsLineGroup">
+        <div id="bsTimeGroup"></div>
+        <div id="bsPeriodGroup" class="bsPeriodGroup"></div>
+        <div id="bsPeriodGroup2" class="bsPeriodGroup"></div>
+        <div id="bsTimeListen" class="bsPeriodGroup">血糖时间监听</div>
+        <div id="bsline"></div>
+    </div>
+    <div class="bpsMainGroup" id="bsGridGroup">
+        表格界面
+    </div>
+    <div class="bpsMainGroup" id="bsCountGroup">
+        统计界面
+        <div id="ringCanvas">
+
+        </div>
+    </div>
+</div>
+</div>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="veanJs/veanLine.js"></script>
+<script src="veanJs/veanView.js"></script>
+<script src="js/vue2.0.js"></script>
+	
+<script>
+	var app = new Vue({
+		el:'#app',
+		data:{
+			items:undefined
+		},
+		mounted:function(){
+			this.init();			
+		},
+		methods:{
+			limess:function(item){
+				console.log(item)
+			},
+			init:function() {
+			var bpline=new BPLine("#bpline")
+		    var ppline=new PPLine("#ppline")
+		    var bsline=new BSLine("#bsline")
+	
+		$("#bsPeriodGroup").css({"display":"none"})
+	    $("#bsPeriodGroup2").css({"display":"none"})
+	    $("#bsCountGroup").css({"display":"none"})
+	    $("#bsGridGroup").css({"display":"none"})
+	    $("#bpListGroup").css({"display":"none"})
+	//    $("#bpLineGroup").css({"display":"none"})
+	//    $("#bsLineGroup").css({"display":"none"})
+	
+	    //血糖 日类型 时间监听
+	    $(".mBsScrollerPart").scroll(function() {
+	        $("#bsTimeListen")[0].innerHTML = getBloodSugarTimeBy(bsline.bsConfigure.startDate,$(".mBsScrollerPart").scrollLeft());
+	    });
+	
+	    console.log("选择器初始化")
+	    var bpconfigure=new ButtonGroupConfigure(["周","月","年"])
+	    var bpTimegroup=new buttonGroup($("#bpTimeGroup"),bpconfigure)
+	    bpTimegroup.setCurrentIndexState(0)
+	    bpTimegroup.addItemClickEvent=function(index,e){
+	        var tag;
+	        if(index===0)tag="周"
+	        if(index===1)tag="月"
+	        if(index===2)tag="年"
+	        bpline.showDataByType(tag)
+	        ppline.showDataByType(tag)
+	    }
+	
+			    var bsconfigure=new ButtonGroupConfigure(["日","周","月"])
+			    var bsTimegroup=new buttonGroup($("#bsTimeGroup"),bsconfigure)
+			    bsTimegroup.setCurrentIndexState(0)
+			    bsTimegroup.addItemClickEvent=function(index,e){
+			        $("#bsPeriodGroup").css({"display":"none"})
+			        $("#bsPeriodGroup2").css({"display":"none"})
+			        $("#bsTimeListen").css({"display":"none"})
+			        if(index===0){
+			            $("#bsTimeListen").css({"display":"inline-block"})
+			            $("#bsTimeListen")[0].innerHTML=getBloodSugarTimeBy(bsline.bsConfigure.startDate,$(".mBsScrollerPart").scrollLeft());
+			        }else if(index===1){
+			            $("#bsPeriodGroup").css({"display":"inline-block"})
+			        }else if(index===2){
+			            $("#bsPeriodGroup2").css({"display":"inline-block"})
+			        }
+			        if(index===0){
+			            window.bloodSugarTimeType="日"
+			            window.bloodSugarPeriodType="全天"
+			            bsPeriodTimegroup.setCurrentIndexState(0)
+			        }
+			        if(index===1){
+			            window.bloodSugarPeriodType="全天"
+			            window.bloodSugarTimeType="周"
+			            bsPeriodTimegroup.setCurrentIndexState(0)
+			        }
+			        if(index===2){
+			            window.bloodSugarTimeType="月"
+			            window.bloodSugarPeriodType="餐前"
+			            bsPeriodTimegroup2.setCurrentIndexState(0)
+			        }
+			        bsline.showDataByType(window.bloodSugarPeriodType,window.bloodSugarTimeType)
+			    }
+		
+			    var bsPeriodconfigure=new ButtonGroupConfigure(["全天","餐前","餐后","睡前"])
+			    bsPeriodconfigure.setDefaultType(1)
+			    var bsPeriodTimegroup=new buttonGroup($("#bsPeriodGroup"),bsPeriodconfigure)
+			    bsPeriodTimegroup.setCurrentIndexState(0)
+			    bsPeriodTimegroup.addItemClickEvent=function(index,e){
+			        if(index===0)window.bloodSugarPeriodType="全天"
+			        if(index===1)window.bloodSugarPeriodType="餐前"
+			        if(index===2)window.bloodSugarPeriodType="餐后"
+			        if(index===3)window.bloodSugarPeriodType="睡前"
+			        bsline.showDataByType(window.bloodSugarPeriodType,window.bloodSugarTimeType)
+			    }
+			
+			    var bsPeriodconfigure2=new ButtonGroupConfigure(["餐前","餐后","睡前"])
+			    bsPeriodconfigure2.setDefaultType(1)
+			    var bsPeriodTimegroup2=new buttonGroup($("#bsPeriodGroup2"),bsPeriodconfigure2)
+			    bsPeriodTimegroup2.setCurrentIndexState(0)
+			    bsPeriodTimegroup2.addItemClickEvent=function(index,e){
+			        if(index===0)window.bloodSugarPeriodType="餐前"
+			        if(index===1)window.bloodSugarPeriodType="餐后"
+			        if(index===2)window.bloodSugarPeriodType="睡前"
+			        bsline.showDataByType(window.bloodSugarPeriodType,window.bloodSugarTimeType)
+			    }
+			
+			
+			    var bpDataChooseconfigure=new ButtonGroupConfigure(["曲线","列表"])
+			    bpDataChooseconfigure.setDefaultType(1)
+			    var bpDataChoosegroup=new buttonGroup($("#bpDataChoose"),bpDataChooseconfigure)
+			    bpDataChoosegroup.setCurrentIndexState(0)
+			    bpDataChoosegroup.addItemClickEvent=function(index,e){
+			        $("#bpListGroup").css({"display":"none"})
+			        $("#bpLineGroup").css({"display":"none"})
+			        if(index==0){
+			            $("#bpLineGroup").css({"display":"inline-block"})
+			        }else if(index==1){
+			            $("#bpListGroup").css({"display":"inline-block"})
+			        }
+			    }
+			
+				    var bsDataChooseconfigure=new ButtonGroupConfigure(["曲线","表格","统计"])
+				    bsDataChooseconfigure.setDefaultType(1)
+				    var bsDataChoosegroup=new buttonGroup($("#bsDataChoose"),bsDataChooseconfigure)
+				    bsDataChoosegroup.setCurrentIndexState(0)
+				    bsDataChoosegroup.addItemClickEvent=function(index,e){
+				        $("#bsCountGroup").css({"display":"none"})
+				        $("#bsGridGroup").css({"display":"none"})
+				        $("#bsLineGroup").css({"display":"none"})
+				        if(index==0){
+				             $("#bsLineGroup").css({"display":"inline-block"})
+				        }else if(index==1){
+				            $("#bsGridGroup").css({"display":"inline-block"})
+				        }else if(index==2){
+				            $("#bsCountGroup").css({"display":"inline-block"})
+				        }
+				    }
+			    		var self=this
+						$.get("http://apistage.wenanle.com/patients/5892ccbfbf398d667b4844fb/blood-pressure-records",(data,status)=>{
+			            window.heighs=[];
+			            window.lows=[];
+			            this.items = data;
+			            console.log('血压')
+			            console.log(this.items)
+			            for(let i=0;i<data.length;i++){
+			                let bp=data[i];
+			                if(i==0){
+			                    window.measured_at=bp.measured_at
+			                    let date=new Date(window.measured_at*1000)
+			                    console.log("第一个数据的时间"+date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate());
+			                    window.bpdays = (new Date().getTime() - date.getTime()) / 24/3600/1000;
+			                    bpline.bpConfigure.startTime=window.measured_at;
+			                    ppline.ppConfigure.startTime=window.measured_at;
+			                }
+			            }
+			            var bpWeekRawData=getBloodPressureOfWeek(data)
+			            var bppWeekData=getShowDataByOriginData(bpWeekRawData);
+			            bpline.bpConfigure.showWeekHData=bppWeekData.height;
+			            bpline.bpConfigure.showWeekLData=bppWeekData.low;
+			            ppline.ppConfigure.showWeekData=bppWeekData.dis;
+			
+			            var bpMonthRawData=getBloodPressureOfMonth(data)
+			            var bppWeekData=getShowDataByOriginData(bpWeekRawData);
+			            bpline.bpConfigure.showMonthHData=bppWeekData.height;
+			            bpline.bpConfigure.showMonthLData=bppWeekData.low;
+			            ppline.ppConfigure.showMonthData=bppWeekData.dis;
+			
+			            var bpYearRawData=getBloodPresureOfYear(data)
+			            var bppYearData=getShowDataByOriginData(bpYearRawData);
+			            bpline.bpConfigure.showYearHData=bppYearData.height;
+			            bpline.bpConfigure.showYearLData=bppYearData.low;
+			            ppline.ppConfigure.showYearData=bppYearData.dis;
+			        });
+	
+			        $.get("http://apistage.wenanle.com/patients/5892ccbfbf398d667b4844fb/blood-sugar-records",function(data,status){
+			            var datas=getCategoryBloodSugar(data)
+			            console.log(data);
+			            if(data.length!=0){
+			                bsline.bsConfigure.startDate=data[0].date;
+			                $("#bsTimeListen")[0].innerHTML=getBloodSugarTimeBy(bsline.bsConfigure.startDate,0);
+			                var dates=bsline.bsConfigure.startDate.split("-");
+			                var date=new Date();
+			                date.setFullYear(dates[0],dates[1]-1,dates[2])
+			                bsline.bsConfigure.startTime=parseInt(date.getTime()/1000)
+			            }
+			            bsline.bsConfigure.showAllData=datas.allArray;
+			            bsline.bsConfigure.showPreData=datas.preArray;
+			            bsline.bsConfigure.showPostData=datas.postArray;
+			            bsline.bsConfigure.showSleepPreData=datas.sleepArray;
+			        });
+				}
+			}
+		})
+</script>
+</body>
+</html>

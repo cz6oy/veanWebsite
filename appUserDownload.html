@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>问安慢病管理</title>
+	<link rel="stylesheet" href="css/appDownload.css">
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/index2.css" />
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+		//下拉菜单
+		$(document).ready(function() {
+			//需求：鼠标放到li上面，让他里面的Ul显示
+			var jqli = $(".nav-right>ul>li");
+				jqli.mouseenter(function() {
+				$(this).children("ul").stop().slideDown(150);
+			});
+				
+				jqli.mouseleave(function() {
+				$(this).children("ul").stop().slideUp(150);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="content-header">
+		<!--首页顶部导航-->
+		<div class="nav">
+			<div class="w">
+				<div class="nav-left">
+					<a href="https://www.wenanle.com/" title="vean问安" target="_blank">vean问安</a>
+				</div>
+				<div class="nav-right">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li>
+							<a href="#">产品</a>
+							<ul>
+                				<li class="menu-item">
+                					<div class="clearfixed">
+                						<img src="img/心电仪-导航.png" alt="" />
+                						<a href="ecg.html"><p>问安心电仪</p></a>
+                					</div>
+                					<div>
+                						<img src="img/血糖仪-导航.png" />
+                						<p>问安血糖仪</p>
+                					</div>
+                					<div>
+                						<img src="img/血糖仪-导航.png" />
+                						<p>问安血压仪</p>
+                					</div>
+                				</li>
+            				</ul>
+						</li>
+						<li>
+							<a href="#" class="color-gerrn">APP下载</a>
+							<ul>
+                				<li class="menu-item">
+                					<div class="clearfixed">
+                						<img src="img/慢病管理-导航.png" alt="" />
+                						<p>问安客户端</p>
+                					</div>
+                					<div>
+                						<img src="img/好医生-导航.png" alt="" />
+                						<p>问安好医生</p>
+                					</div>
+                				</li>
+            				</ul>
+						</li>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">加入我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--页面二维码-->
+		<div class="erweima">
+			<span>扫一扫直接下载，自动识别iOS/Android系统</span>
+			<img src="img/患者.png" alt="" />
+		</div>
+			<!--三个人-->
+		<div class="header-imgage">
+				<div class="imgage-left"><img src="img/1-2.png" alt="" /></div>
+				<div class="imgage-right"><img src="img/1-1.png" alt="" /></div>
+				<div class="imgage-line"><img src="img/1-3.png" alt="" /></div>
+				<div class="header-text">
+					<p class="text-p1">问安慢病管理平台</p>
+					<p class="text-p2">关爱亲人，从问安开始</p>
+				</div>
+			</div>
+		</div>
+		<!--数据采集-->
+		<div class="data-collect">
+			<div class="w">
+				<p class="text-p1">健康数据采集，健康档案管理</p>
+				<p class="text-p2">记录用户的血压、血糖、心电数据，同时可保存体检记录、门诊记录</p>
+				<p class="text-p3">所有数据综合形成您专属的健康档案</p>
+				<div class="clouds"></div>
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+		</div>
+		<!--在线问诊-->
+		<div class="online-visits">
+			<div class="w">
+				<p class="text-p1">以服务用户为主旨，专业的在线问诊</p>
+				<p class="text-p2">就您或亲人不同类型的健康数据向医生发起在线问诊，足不出户知悉健康状况</p>
+				<div class="left2"></div>
+				<div class="right2"></div>
+				<div class="phone2"></div>
+			</div>
+		</div>
+		<!--扇形Phone-->
+		<div class="content-sector">
+			<p class="text-p1">您的健康，我们关怀</p>
+			<p class="text-p2">问安，将移动医疗与穿戴式设备相结合，做一个专注的慢病管理平台。</p>
+			<div class="content-sector-phone">
+				<div class="sector-pos phone-left"></div>
+				<div class="sector-pos phone-right"></div>
+				<div class="sector-pos phone-middle"></div>
+			</div>
+		</div>
+				<!--首页底部导航-->
+		<div class="footer">
+			<div class="w">
+				<div class="footer-left">
+					<img src="img/未命名-1.png" alt="vean问安" />
+				</div>
+				<div class="footer-middle">
+					<p class="footer-text1">山西博迪安泰信息技术有限公司</p>
+					<p class="footer-text2">
+						Copyright©2015 wenanle.com All Rights Reserved<br />
+						晋ICP备15004007号-1
+					</p>
+					<img src="img/gh.png" alt="国徽" />
+					<a href="#" class="footer-text3">
+						晋公网安备 14010502050185号
+					</a>
+				</div>
+				<div class="footer-right">
+					<ul>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">联系我们</a></li>
+						<li><a href="#">加入我们</a></li>
+					</ul>
+					<span class="s1">客服热线：<span class="s2">400-001-5121</span></span>
+				</div>
+			</div>
+		</div>
+	</body>
+		<script>
+			$(function() {
+			//获取元素
+			var clouds = $(".clouds");
+			var left = $(".left");
+			var right = $(".right");
+			var phone2 = $(".phone2");
+			var left2 = $(".left2");
+			var right2 = $(".right2");
+			var left3 = $(".phone-left");
+			var right3 = $(".phone-right");
+			$(window).scroll(function() {
+				console.log($(window).scrollTop());	
+				if ($(window).scrollTop() > 800) {
+					clouds.addClass("clouds_style");
+					left.addClass("left_style");
+					right.addClass("right_style");
+				}
+				if ($(window).scrollTop() > 1900) {
+					phone2.addClass("phone2_style");
+					left2.addClass("left2_style");
+					right2.addClass("right2_style");
+				}
+				if ($(window).scrollTop() > 2700) {
+					left3.addClass("left3_style");
+					right3.addClass("right3_style");
+				}
+			});
+		});
+		</script>
+</html>
+

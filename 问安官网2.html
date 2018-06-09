@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: #f4f4f4;
+        }
+        .box{
+            /* width: 100%;
+            height: 500px;
+            background: yellow; */
+        }
+        .menu{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width:100%;
+            height:80px;
+            z-index: 33;
+        }
+        .nav{
+            margin:0 auto;
+            width:1280px;
+            height:80px;
+        }
+        .logo_box{
+            float: left;
+            margin-top: 10px;
+            margin-right: 350px;
+        }
+        .logo_box img{
+            width: 120px;
+            height: 60px;
+        }
+        .nav li {
+            float: left;
+            list-style: none;
+            cursor: pointer;
+        }
+        .nav li a{
+            position: relative;
+            display: block;
+            padding: 0 30px;
+            height: 80px;
+            line-height: 80px;
+            text-decoration: none;
+            overflow: hidden;
+            font-size: 15px;
+            color: #000;
+        }
+        .nav li a:hover,
+        .nav li a.current{
+            color: #1CB28E;
+            /* background: #000; */
+        }
+        .nav li .box{
+            position: absolute;
+            top: 80px;
+            left: 0px;
+            padding-left: 200px;
+            width: 100%;
+            height: 130px;
+            background: #fff;
+            display: none;
+        }
+        .nav li .box a{
+            display:block;
+            height:50px;
+            float:left;
+            color:#000;
+            border:none;
+            line-height:50px;
+            font-size: 13px;
+            background:none;
+        }
+
+
+
+        .ddhf{
+            width:100%;
+            height:600px;
+        }
+        .dhf{
+            margin: 0 auto;
+            position:relative;
+        }
+        .dhf .nhftp li{
+            float:left;
+            margin: 0 auto;
+            width:100% !important;
+            height:500px;
+            list-style-type:none;
+        }
+        .dhf .nhftp li img{
+           width: 100%;
+           height: 700px;
+        }
+
+        .dhf .nhfsz{
+            width:55px;
+            height:20px;
+            position:absolute;
+            left:44%;
+            top:650px;
+        }
+        .dhf .nhfsz li{
+            float:left;
+            width:10px;
+            height:10px;
+            background:#0099ff;
+            margin-left:5px;
+            list-style-type:none;
+        }
+        .dhf .nhfsz .on{
+            background:#ffcc00;
+        }
+
+
+        .vean_controls{
+            margin-top: 50px;
+            width: 100%;
+        }
+        .vean_controls img{
+            width: 100%;
+            height: 500px;
+        }
+        .vean_news{
+            margin-top: 250px;
+            display: -webkit-flex;
+            width: 100%;
+            /* height: 400px; */
+            background: #fff;
+        }
+        .vean_news .left_box{
+            flex: 1;
+            width: 300px;
+            height: 400px;
+            border-left: 1px solid #eee;
+        }
+        .vean_news .left_box a img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+            width: 345px;
+            height: 205px;
+        }
+        .vean_news .left_text{
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 130px;
+            color: #333;
+            font-size: 20px;
+        }
+        .vean_news .midd_box{
+            flex: 1;
+            width: 300px;
+            height: 400px;
+            border-left: 1px solid #eee;
+        }
+        .vean_news .midd_box a img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+            width: 345px;
+            height: 205px;
+        }
+        .vean_news .midd_text{
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 160px;
+            color: #333;
+            font-size: 20px;
+        }
+        .vean_news .right_box{
+            flex: 1;
+            width: 300px;
+            height: 400px;
+            border-left: 1px solid #eee;
+        }
+        .vean_news .right_box a img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+            width: 345px;
+            height: 205px;
+        }
+        .vean_news .right_text{
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 270px;
+            color: #333;
+            font-size: 20px;
+        }
+        .bottom_box{
+            margin-top: 30px;
+            width: 100%;
+            height: 300px;
+            background: #434947;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+            <div class="dhf">
+                    <ul class="nhftp">
+                        <li class="nhftp_one_li">
+                            <img src="https://fms.res.meizu.com/dms/2018/01/22/46eb7766-30a2-4c57-907f-3a8278747ea0.jpg" alt="">
+                            <!-- <div class="ecg_what">想了解您的心脏吗？</div> -->
+                        </li>
+                        <li>
+                            <img src="https://fms.res.meizu.com/dms/2018/01/22/a994e2a2-21ab-4c43-a243-138f7e257d2e.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="https://fms.res.meizu.com/dms/2018/01/24/140a21e4-08f2-4576-9ba6-4be0c367cf5e.jpg" alt="">
+                        </li>
+                    </ul>
+                    <ul class="nhfsz">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            <div class="menu">
+                <ul class="nav">
+                <div class="logo_box"><img src="./img/网站logo.png" alt=""></div>
+                <li>
+                    <a href="#">问安产品</a>
+                    <div class="box">
+                        <div style="margin-left:370px;"><img style="width:50px;height:80px;" src="./问安官网/1_03.png" alt=""></div>
+                        <a href="#" style="margin-left:330px;">问安心电仪</a>
+                        <a href="#">问安血压仪</a>
+                        <a href="#">问安血糖仪</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">APP下载</a>
+                    <div class="box">
+                        <a href="#" style="margin-left:450px;">问安客户端</a>
+                        <a href="#">问安好医生</a>
+                        <a href="#">问安Holter读图</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">加入我们</a>
+                    <div class="box">
+                        <a href="#" style="margin-left:570px;">加入问安</a>
+                        <a href="#">渠道伙伴</a>
+                        <a href="#">解决方案伙伴</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">登录中心</a>
+                    <div class="box">
+                        <a href="#" style="margin-left:690px;">用户登录</a>
+                        <a href="#">医生值班室</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">关于我们</a>
+                </li>
+            </ul>
+        </div>
+        <div class="vean_news">
+                <div class="left_box fl">
+                    <a href="#"><img src="./问安官网/搜狗截图20180202195525.png" alt=""></a>
+                    <div class="left_text">人工智能解读</div>
+                </div>
+                <div class="midd_box fl">
+                    <a href="#"><img src="./问安官网/搜狗截图20180202191742.png" alt=""></a>
+                    <!-- <a href="#"><img src="./问安官网/搜狗截图20180204143441.png" alt=""></a> -->
+                    <div class="midd_text">健康，从今天开始</div>
+                </div>
+                <div class="right_box fl">
+                    <a href="#"><img src="./问安官网/u=3664608266,1403446078&fm=27&gp=0.jpg" alt=""></a>
+                    <div class="right_text">亲情关怀，儿女随时在您身边</div>
+                </div>
+            </div>
+            <!-- 健康管理 -->
+            <div class="vean_controls">
+                <img src="./问安官网/搜狗截图20180202185734.png" alt="">
+            </div>
+            <!-- 问安底部 -->
+            <div class="bottom_box">
+    
+            </div>
+    </div>
+</body>
+<script src="./jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./jquery.SuperSlide.2.1.1.js"></script>
+<script>
+$(function(){
+    var navLi = $('.menu .nav li');
+    var likai = $('menu .nav');
+    navLi.mouseover(function(){
+        $(".menu").css("background-color","#FFF");
+        $(".logo_box img").attr("src","./img/网站logo.png");
+        $(this).find("a").addClass(".current");
+        $(this).find(".box").stop().slideDown();
+    })
+    navLi.mouseleave(function(){
+        $(this).find("a").removeClass(".current");
+        $(this).find(".box").hide();
+        $(".menu").css("background-color","");
+        $(".logo_box img").attr("src","./img/网站logo.png");
+        // $(".logo_box img").attr("src","./问安官网/logo_white.png");
+    })
+})
+$(".dhf").slide({
+	titCell:".nhfsz li",/*获取滚动区域*/
+	mainCell:".nhftp",/*获取执行区域*/
+	trigger:"mouseover",/*鼠标事件*/
+	autoPlay:true,/*自动滚动*/
+	effect:"fold",/*滚动效果*/
+    delayTime:2000
+});/*渐显时间*/
+</script>
+</html>

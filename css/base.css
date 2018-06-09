@@ -1,0 +1,44 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+a {
+	color: #361A1A;
+    text-decoration: none;
+}
+/*首页顶部导航*/
+.b {
+	color: #FFFFF0;
+}
+.w {
+	width: 1201px;
+	margin: 0 auto;
+}

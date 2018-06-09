@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script src="jquery-1.11.1.min.js"></script>
+    <style>
+        .nav{
+            height: 80px;
+            width: 100%;
+            background:transparent;
+            position: fixed;
+            z-index: 1;
+            border-bottom: 1px solid cadetblue;
+            transition: all 1s ease;
+        }
+        .nav-left{
+            float: left;
+            width: 214px;
+            height: 80px;
+            background: url("img/logo_white.png") no-repeat 0 center;
+        }
+        .nav-right{
+            float: right;
+            height: 80px;
+        }
+        .nav-right ul li {
+            float: left;
+            margin: 0 51px;
+            font-size: 18px;
+            line-height: 80px;
+        }
+        .nav-right ul li:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+        .home-wrap {
+            width: 100%;
+            height: 700px;
+        }
+        .fullscreen-img {
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            min-width: 1024px;
+            width: 100%;
+            height: auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .home-content {
+           position: relative;
+           width: 1200px;
+           height: 100%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            /* display: inline-block; */
+        }
+        .home-content .text{
+            position: absolute;
+            top: 253px;
+            left: 0;
+        }
+        #about{
+            z-index: 222;
+            height: 500px;
+            background: yellow;
+        }
+        .clearfix:after {
+				content: ".";
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				display: block;
+				clear: both;
+			}
+			.clearfix {
+				*zoom: 1;
+            }
+        .home-wrap .home-content{
+            position: relative;
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .home-wrap .home-content .text{
+            position: absolute;
+            top: 410px;
+            left: 802px;
+            width: 800px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 20px;
+            color: #1b1b1b;
+        }
+        .home-wrap .home-content .info{
+            display: block;
+            position: absolute;
+            top: 525px;
+            left: 1082px;
+            width: 240px;
+            height: 60px;
+            color: #fff;
+            background: #FE7545;
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            border-radius: 29px;
+            transition: background-color 0.3s ease;
+        }
+        .home-wrap .home-content .info:hover{
+            background: #EF5621;
+        }
+        .slideShow{
+	width: 100%;
+	height: 640px;
+	overflow: hidden;
+	position: relative;
+    margin: 0 auto;
+    background: #fff;
+}
+.slideShow ul {
+	margin-top: 20px;
+	width: 8100px;
+	position: relative;
+}
+.slideShow ul li{
+	float: left;
+	width: 1340px;
+	border: 1px solid red;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.slideShow .showNav{
+	width: 715px;
+	height: 30px;
+	margin: 10px auto;
+}
+.slideShow .showNav span{
+	font-size: 22px;
+	margin-right: 30px;
+	color: #464646;
+	cursor: pointer;
+}
+.slideShow .showNav .active{
+	color: blue;
+}
+    </style>
+</head>
+<body>
+<div class="nav clearfix">
+    <div class="w">
+        <div class="nav-left"></div>
+        <div class="nav-right">
+            <ul>
+                <li><span>首页</span></li>
+                <li><span>产品</span></li>
+                <li><span>APP下载</span></li>
+                <li><span>关于我们</span></li>
+                <li><span>加入我们</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="home-wrap">
+        <!-- <img src="img/index_top_bg.jpg" class="fullscreen-img" alt=""> -->
+        <div class="home-content">
+            <p class="text">
+                建立一个数字化的心血管健康管理辅助平台<br/>
+                预防和筛查生命健康信息状态和疾病预警<br/>
+                帮助慢性病人群预防控制治疗自己的疾病<br/>
+            </p>
+            <a href="#" class="info">了解更多</a>
+        </div>
+    </div>
+    
+    <div style="background-image: url('img/index_top_bg.jpg')" class="fullscreen-img"></div>
+    <!-- 轮播图 -->
+		 <div class="slideShow">
+                <!--按钮布局开始-->
+                <div class="showNav">
+                    <span class="active">慢病管理APP</span>
+                    <span>问安好医生</span>
+                    <span>问安云</span>
+                    <span>心电仪</span>
+                    <span>血压计</span>
+                    <span>血糖仪</span>
+                </div>
+                <!--图片布局开始-->
+                <ul>
+                    <li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/chronic_app.jpg" /></li>
+                    <li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/doctor_app.jpg" /></li>
+                    <li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/wenan_clond.jpg" /></li>
+                    <li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/ecg.jpg" /></li>
+                    <li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/blood_press.jpg" alt=""></li>
+                    <li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/blood_sugar.jpg" alt=""></li>
+                </ul>
+                <!--图片布局结束-->
+            </div>
+
+</body>
+<script type="text/javascript">
+$(function(){
+    var stop = 0;//滚轮停留的值
+    var aa = 0;
+    var isShow = true;//默认导航栏显示
+    var nav = $('.nav');//获取导航栏DOM
+    $(window).scroll(function(){
+        console.log($(window).scrollTop());
+            if($(window).scrollTop()>aa){
+                aa = $(window).scrollTop();
+                $('.home-content .text').fadeOut();
+                $('.home-content .info').fadeOut();
+            }else if($(window).scrollTop()<aa){
+                aa = $(window).scrollTop();
+                $('.home-content .text').fadeIn();
+                $('.home-content .info').fadeIn();
+            }
+        if(stop - $(window).scrollTop() > 0){
+            setTimeout(function(){
+                if(isShow && stop < 615){
+                    nav.css('background','transparent');
+                    $('.nav-right ul li').css("color","#fff");
+					$('.nav-left').css("background",'url("./img/logo_white.png") no-repeat 0 center');
+					return;
+                }
+                if(isShow && stop > 615){
+                    nav.css('background','rgba(255,255,255,0.9)');
+                    $('.nav-right ul li').css("color","rgb(58, 187, 156)");
+					$('.nav-left').css("background",'url("https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/common/logo.png") no-repeat 0 center');
+                }
+                nav.css('transform','translateY(0px)');
+				isShow = true;
+            },0);
+        }else{
+            setTimeout(function(){
+                //如果已经隐藏，就返回不再进行C3隐藏
+                if(!isShow){
+                    return;
+                }
+                nav.css('transform','translateY(-80px)');
+				isShow = false;
+            },0);
+        }
+        setTimeout(function(){
+            stop = $(window).scrollTop();
+        },0)
+    });
+});
+
+$(document).ready(function(){
+			var slideShow=$(".slideShow"), //获取最外层框架的名称
+			ul=slideShow.find("ul"), 
+			showNumber=slideShow.find(".showNav span"),//获取按钮
+			oneWidth=slideShow.find("ul li").eq(0).width(); //获取每个图片的宽度
+			var timer=null; //定时器返回值，主要用于关闭定时器
+			var iNow=0; //iNow为正在展示的图片索引值，当用户打开网页时首先显示第一张图，即索引值为0
+			
+			showNumber.on("click",function(){  //为每个按钮绑定一个点击事件 
+			$(this).addClass("active").siblings().removeClass("active"); //按钮点击时为这个按钮添加高亮状态，并且将其他按钮高亮状态去掉
+			var index=$(this).index(); //获取哪个按钮被点击，也就是找到被点击按钮的索引值
+				iNow = index;
+				ul.animate({
+					"left":-oneWidth*iNow, //注意此处用到left属性，所以ul的样式里面需要设置position: relative; 让ul左移N个图片大小的宽度，N根据被点击的按钮索引值index确定
+				})
+			});
+
+
+			timer=setInterval(function(){ //打开定时器
+			iNow++;    //让图片的索引值次序加1，这样就可以实现顺序轮播图片
+			if(iNow>showNumber.length-1){ //当到达最后一张图的时候，让iNow赋值为第一张图的索引值，轮播效果跳转到第一张图重新开始
+			iNow=0;
+			}
+			showNumber.eq(iNow).trigger("click"); //模拟触发数字按钮的click
+			},2000); //2000为轮播的时间
+		})
+</script>
+</html>

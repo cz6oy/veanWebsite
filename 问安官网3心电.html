@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, fieldset, legend, img {
+            margin: 0;
+            padding: 0;
+        }
+        .header_box{
+            width: 100%;
+            height: 57px;
+            background: #00B4A0;
+            border-bottom: 1px solid #00B09C;
+        }
+        .content_box{
+            margin: 0 auto;
+            width: 1200px;
+            height: 57px;
+        }
+        .content_box img{
+            float: left;
+            margin-right: 200px;
+            width: 144px;
+            height: 57px;
+            line-height: 57px;
+        }
+        .content_box ul li{
+            float: left;
+            list-style: none;
+            cursor: pointer;
+        }
+        .content_box ul li a:hover{
+            border-bottom: 2px solid #23c2aa;
+            z-index: 220;
+        }
+        .content_box ul li a{
+            position: relative;
+            display: block;
+            padding: 0 30px;
+            height: 57px;
+            line-height: 57px;
+            text-decoration: none;
+            overflow: hidden;
+            font-size: 18px;
+            color: #fff;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        .content_box ul li a:hover,
+        .content_box ul li a.current{
+            color: #23c2aa;
+        }
+        .content_box ul li .box{
+            position: absolute;
+            top: 57px;
+            left: 0px;
+            padding-left: 200px;
+            width: 100%;
+            height: 150px;
+            background: #f5f5f5;
+            opacity: 0.9;
+            display: none;
+            z-index: 22;
+        }
+        .content_box ul li .box li a{
+            display:block;
+            height:50px;
+            /* float:left; */
+            color:#000;
+            border:none;
+            line-height:50px;
+            font-size: 15px;
+            background:none;
+        }
+
+
+
+        .one_image{
+            width: 100%;
+        }
+        .three-image{
+            width: 100%;
+        }
+        .three-image div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header_box">
+        <div class="content_box">
+            <img src="./img/网站logo.png" alt="">
+            <ul>
+                <li>
+                    <a href="./问安官网3.html">首页</a>
+                </li>
+                <li>
+                    <a href="#">产品与服务</a>
+                    <ul class="box">
+                        <li style="margin-left:330px;margin-top:10px;width:135px;">
+                            <div style="margin-left:40px;"><img style="width:50px;height:80px;" src="./问安官网/1_03.png" alt=""></div>
+                            <a href="#">问安心电仪</a>
+                        </li>
+                        <li>
+                            <a href="#">问安血压仪</a>
+                        </li>
+                        <li>
+                            <a href="#">问安血糖仪</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">问安健康APP</a>
+                    <ul class="box">
+                        <li style="margin-left:480px;"><a href="E:\HBuilderProject\vean问安\问安官网3心电.html">问安客户端</a></li>
+                        <li><a href="#">问安医生端</a></li>
+                        <li><a href="#">问安Holter读图</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">用户登录</a>
+                    <ul class="box">
+                        <li style="margin-left:640px;"><a href="#">问安健康档案</a></li>
+                        <li><a href="#">问安医生值班室</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">加入我们</a>
+                    <ul class="box">
+                        <li style="margin-left:700px;">
+                            <a href="#">加入问安</a>
+                        </li>
+                        <li><a href="#">渠道伙伴</a></li>
+                        <li><a href="#">解决方案伙伴</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="one_image">
+            <img style="padding-top:50px;" src="./问安官网/手握iphone.png" style="width:100%;height:100%;" alt="">
+        </section>
+        <section>
+            <!-- <img style="padding-top:100px;" src="./问安官网/问安软件介绍1.png" style="width:100%;height:100%;" alt=""> -->
+            <img style="padding-top:100px;" src="./问安官网/搜狗截图20180206173741.png" style="width:100%;height:100%;" alt="">
+        </section>
+        <section>
+            <img src="./问安官网/搜狗截图20180206171141.png" style="width:100%;height:100%;">
+        </section>
+        <section class="three-image"> 
+            <div style="font-size:42px;padding-top:130px;">您的健康，我们关怀</div>
+            <div style="font-size:22px;padding-top:30px;padding-bottom:60px;">问安，将移动医疗与穿戴式设备相结合，做一个专注的慢病管理平台。</div>
+            <img src="./问安官网/搜狗截图20180205223322.png" style="width:100%;height:100%;" alt="">
+        </section>
+    </main>
+    <footer class="bottom_box">
+        <img src="./问安官网/搜狗截图20180205212301.png" style="width:100%;height:100%;" alt="">
+    </footer>
+</body>
+<script src="./jquery-1.11.1.min.js"></script>
+<script>
+$(function(){
+    var newLi = $('.content_box>ul>li');
+    newLi.mousemove(function(){
+        $(this).find("a").addClass(".current");
+        // $(this).find(".box").stop().slideDown();
+        $(this).find(".box").show();
+    })
+    newLi.mouseleave(function(){
+        $(this).find("a").removeClass(".current");
+        $(this).find(".box").hide();
+    })
+})
+</script>
+</html>

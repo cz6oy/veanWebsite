@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>问安健康官方网站 - 问安 - 健康为你</title>
+		<!--网页关键字-->
+		<meta name="keywords" content="心血管网站,慢病管理,心律失常,心肌梗死,高血压,心脏病,冠心病,心衰,社区,病例讨论,医生,高血脂,用药助手,内分泌,在线咨询,在线问诊,免费提问,专业医生解答,心电监护,移动健康,移动医疗"/>
+		<!--网页描述-->
+		<meta name="description" content="问安专注于数字医疗软硬件研究开发、云平台大数据医疗服务。为有健康需求的人提供个性化、即时性健康服务。公司以“健康数字化生存，创新医学”为理念，与您携手共创健康生活。">
+		<link rel="icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/base.css"/>
+		<link rel="stylesheet" href="css/index.css"/>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				//需求：鼠标放到li上面，让他里面的Ul显示
+				var jqli = $(".nav-right>ul>li");
+				jqli.mouseenter(function() {
+					$(this).children("ul").stop().slideDown(150);
+				});
+				
+				jqli.mouseleave(function() {
+					$(this).children("ul").stop().slideUp(150);
+				});
+			});
+		</script>
+	</head>
+	<body>	
+		<!--首页顶部导航-->
+		<div class="nav">
+			<div class="w">
+				<div class="nav-left"></div>
+				<div class="nav-right">
+					<ul>
+						<li><a href="#" class="b">首页</a></li>
+						<li>
+							<a href="#">产品</a>
+							<ul>
+                				<li class="menu-item">
+                					<div class="clearfixed">
+                						<img src="img/心电仪-导航.png" alt="" />
+                						<a href="ecg.html"><p>问安心电仪</p></a>
+                					</div>
+                					<div>
+                						<img src="img/血糖仪-导航.png" />
+                						<p>问安血糖仪</p>
+                					</div>
+                					<div>
+                						<img src="img/血糖仪-导航.png" />
+                						<p>问安血压仪</p>
+                					</div>
+                				</li>
+            				</ul>
+						</li>
+						<li>
+							<a href="#">APP下载</a>
+							<ul>
+                				<li class="menu-item">
+                					<div class="clearfixed">
+                						<img src="img/慢病管理-导航.png" alt="" />
+                						<a href="appUserDownload.html"><p>问安客户端</p></a>
+                					</div>
+                					<div>
+                						<img src="img/好医生-导航.png" alt="" />
+                						<p>问安好医生</p>
+                					</div>
+                				</li>
+            				</ul>
+						</li>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">加入我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--了解更多-->
+		<div class="banner">
+			<img src="img/index_top_bg.jpg" />
+			<div class="banner-text">
+				<p>建立一个数字化的心血管健康管理辅助平台<br />
+				&nbsp;预防和筛查生命健康信息状态和疾病预警<br />
+				&nbsp;帮助慢性病人群预防控制治疗自己的疾病
+				</p>
+				<a href="#">了解更多</a>
+			</div>
+		</div>
+		<!--首页中间介绍-->
+		<div class="describe">
+			<p class="desc-p1">PRODUCTS</p>
+			<p class="desc-p2">我们的产品</p>
+		</div>
+		<!-- 轮播图 -->
+		 <div class="slideShow">
+			<!--按钮布局开始-->
+			<div class="showNav">
+				<span class="active">慢病管理APP</span>
+				<span>问安好医生</span>
+				<span>问安云</span>
+				<span>心电仪</span>
+				<span>血压计</span>
+				<span>血糖仪</span>
+			</div>
+			<!--图片布局开始-->
+			<ul>
+				<li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/chronic_app.jpg" /></li>
+				<li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/doctor_app.jpg" /></li>
+				<li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/wenan_clond.jpg" /></li>
+				<li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/ecg.jpg" /></li>
+				<li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/blood_press.jpg" alt=""></li>
+				<li><img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/blood_sugar.jpg" alt=""></li>
+			</ul>
+			<!--图片布局结束-->
+		</div>
+		<!--我们的服务流程-->
+		<div class="process">
+			<p class="text-p1">SERVICES</p>
+			<p class="text-p2">我们的服务流程</p>
+			<div class="process-cont">
+				<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/index_process_1.png" alt="" />
+				<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/index_process_2.png" alt="" />
+				<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/index_process_3.png" alt="" />
+				<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/index_process_4.png" alt="" />
+				<img src="https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/home/index_process_5.png" alt="" />
+				<p class="arrow1"></p>
+				<p class="arrow2"></p>
+				<p class="arrow3"></p>
+				<p class="arrow4"></p>
+			</div>
+			<div class="process-text">
+				<p class="process-text1">患者设备测量</p>
+				<p class="process-text2">App获取数据并上传</p>
+				<p class="process-text3">医生根据数据<br />给出指导意见</p>
+				<p class="process-text4">患者根据意见<br />调整生活习惯</p>
+				<p class="process-text5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如发现严重问题<br />及时通知医院或其家人</p>
+			</div>
+		</div>
+		<!--首页底部导航-->
+		<div class="footer">
+			<div class="w">
+				<div class="footer-left">
+					<img src="img/未命名-1.png" alt="vean问安" />
+				</div>
+				<div class="footer-middle">
+					<p class="footer-text1">山西博迪安泰信息技术有限公司</p>
+					<p class="footer-text2">
+						Copyright©2015 wenanle.com All Rights Reserved<br />
+						晋ICP备15004007号-1
+					</p>
+					<img src="img/gh.png" alt="国徽" />
+					<a href="#" class="footer-text3">
+						晋公网安备 14010502050185号
+					</a>
+				</div>
+				<div class="footer-right">
+					<ul>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">联系我们</a></li>
+						<li><a href="#">加入我们</a></li>
+					</ul>
+					<span class="s1">客服热线：<span class="s2">400-001-5121</span></span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//滚轮控制导航栏隐藏显示
+		$(function() {
+				var a = 0;//滚轮停留的值
+				var isShow = true;//默认导航栏显示
+				var nav = $('.nav');//获取导航栏的DOM
+				$(window).scroll(function(){
+					if( a - $(window).scrollTop() >0) {
+						setTimeout(function(){
+							//如果已经显示，就返回不再进行C3显示
+							if(isShow && a <615) {
+								$('.nav-right .b').css("color","#fff");
+								nav.css('background','transparent');
+								$('.nav-left').css("background",'url("./img/logo_white.png") no-repeat 0 center');
+								return;
+							}
+							if(a >615) {
+								nav.css('background','rgba(255,255,255,0.9)');
+								$('.nav-right .b').css("color","rgb(58, 187, 156)");
+								$('.nav-left').css("background",'url("https://wenan-public.oss-cn-beijing.aliyuncs.com/vean-website/common/logo.png") no-repeat 0 center');
+
+							}
+							nav.css('transform','translateY(0px)');
+							isShow = true;
+						}, 0);
+					}else{
+						setTimeout(function(){
+							//如果已经隐藏，就返回不再进行C3隐藏
+							if(!isShow) {
+								return;
+							}
+							nav.css('transform','translateY(-80px)');
+							isShow = false;
+						}, 0);
+					}
+					setTimeout(function(){
+						a = $(window).scrollTop();
+					},0)
+				});
+			});
+	</script>
+	<script src="E:\HBuilderProject\vean问安\jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var slideShow=$(".slideShow"), //获取最外层框架的名称
+			ul=slideShow.find("ul"), 
+			showNumber=slideShow.find(".showNav span"),//获取按钮
+			oneWidth=slideShow.find("ul li").eq(0).width(); //获取每个图片的宽度
+			var timer=null; //定时器返回值，主要用于关闭定时器
+			var iNow=0; //iNow为正在展示的图片索引值，当用户打开网页时首先显示第一张图，即索引值为0
+			
+			showNumber.on("click",function(){  //为每个按钮绑定一个点击事件 
+			$(this).addClass("active").siblings().removeClass("active"); //按钮点击时为这个按钮添加高亮状态，并且将其他按钮高亮状态去掉
+			var index=$(this).index(); //获取哪个按钮被点击，也就是找到被点击按钮的索引值
+				iNow = index;
+				ul.animate({
+					"left":-oneWidth*iNow, //注意此处用到left属性，所以ul的样式里面需要设置position: relative; 让ul左移N个图片大小的宽度，N根据被点击的按钮索引值index确定
+				})
+			});
+
+
+			timer=setInterval(function(){ //打开定时器
+			iNow++;    //让图片的索引值次序加1，这样就可以实现顺序轮播图片
+			if(iNow>showNumber.length-1){ //当到达最后一张图的时候，让iNow赋值为第一张图的索引值，轮播效果跳转到第一张图重新开始
+			iNow=0;
+			}
+			showNumber.eq(iNow).trigger("click"); //模拟触发数字按钮的click
+			},2000); //2000为轮播的时间
+		})
+	</script>
+</html>

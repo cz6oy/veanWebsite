@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a{
+				text-decoration: none;
+			}
+			ul li{
+				list-style: none;
+			}
+			.backdrop-box{
+				width: 100%;
+				height: 1080px;
+				/*background-color: #919191;*/
+			}
+			.backdrop-box .health-box {
+				width: 1280px;
+				height: 75px;
+				margin: 0 auto;
+				background-color: #fff;
+				border-bottom: 1px solid #ccc;
+			}
+			.backdrop-box .user-mes{
+				float: left;
+				width: 230px;
+				height: 75px;
+				background-color: #454953;
+				line-height: 75px;
+				position: relative;
+			}
+			.backdrop-box .user-mes img{
+				position: absolute;
+				top: 17px;
+				left: 20px;
+				width: 40px;
+				height: 40px;
+			}
+			.backdrop-box .user-mes .Myname{
+				font-size: 18px;
+				color: #fff;
+				margin-left: 64px;
+			}
+			.backdrop-box .back-nav{
+				float: left;
+				width: 1040px;
+				height: 75px;
+				position: relative;
+			}
+			.backdrop-box .back-nav .back{
+				font-size: 15px;
+				color: #1BBD8F;
+				position: absolute;
+				top: 27px;
+				left: 27px;
+			}
+			.backdrop-box .back-nav .home{
+				font-size: 15px;
+				color: #353535;
+				position: absolute;
+				top: 27px;
+				left: 72px;
+			}
+			.backdrop-box .back-nav .sanjiao{
+				color: #CACACA;
+				position: absolute;
+				top: 30px;
+				left: 107px;
+			}
+			.backdrop-box .back-nav .current{
+				font-size: 15px;
+				color: #353535;
+				position: absolute;
+				top: 27px;
+				left: 124px;
+			}
+			/*顶部导航栏结束*/
+		
+			/*血压信息开始*/
+			.blood-box{
+				width: 1280px;
+				height: 725px;
+				margin: 0 auto;
+				position: relative;
+			}
+			.blood-box .bp-data{
+				position: absolute;
+				top: 42px;
+				left: 100px;
+				font-size: 48px;
+				color: #464646;
+				font-weight: 900;
+			}
+			.blood-box .mmhg{
+				font-size: 15px;
+				color: #646464;
+				position: absolute;
+				top: 75px;
+				left: 275px;
+			}
+			.blood-box .settime{
+				font-size: 15px;
+				color: #353535;
+				position: absolute;
+				top: 75px;
+				left: 354px;
+			}
+			.blood-box .other{
+				position: absolute;
+				top: 160px;
+				left: 115px;
+				font-size: 14px;
+				color: #8E8E93;
+			}
+			.blood-box ul{
+				width: 1090px;
+				height: 290px;
+				position: absolute;
+				top: 168px;
+				left: 100px;
+				border: 1px solid #919191;
+			}
+			.blood-box ul li{
+				height: 43px;
+				line-height: 43px;
+			}
+			.blood-box .content .one-icon{
+				width: 25px;				
+				height: 25px;
+				position: absolute;
+				top: 10px;
+				left: 15px;
+			}
+			.blood-box .content .one-icon,
+			.blood-box .content .two-icon,
+			.blood-box .content .three-icon,
+			.blood-box .content .four-icon,{
+				width: 25px;				
+				height: 25px;
+			} 
+			.blood-box .content .one-icon{
+				position: absolute;
+				top: 10px;
+				left: 15px;
+			}
+			.blood-box .content .two-icon{
+				position: absolute;
+				top: 53px;
+				left: 15px;
+			}
+			.blood-box .content .three-icon{
+				position: absolute;
+				top: 94px;
+				left: 13px;
+			}
+			.blood-box .content .four-icon{
+				position: absolute;
+				top: 145px;
+				left: 15px;
+			}
+			.blood-box .content .text-s1,
+			.blood-box .content .text-s2,
+			.blood-box .content .text-s3,
+			.blood-box .content .text-s4,
+			.blood-box .content .text-s5{
+				font-size: 15px;
+				color: #646464;
+			}
+			.blood-box ul li {
+				border-top: 1px solid #C8C7CC;
+			}
+			/*血压信息结束*/
+		</style>
+	</head>
+	<body>
+		<div class="backdrop-box" id="app">
+			<div class="health-box">
+				<div class="user-mes"><img src="img-room/医生头像.png" alt="" /><span class="Myname">{{blood.source}}的健康记录</span></div>
+				<div class="back-nav"><a href="MyPhrs.html" class="back">返回</a><a href="#" class="home">首页</a><i class="sanjiao">></i><span class="current">血压记录详情</span></div>
+			</div>
+			<div class="blood-box">
+				<span class=" bp-data">{{blood.high}}/{{blood.heart_rate}}</span>
+				<span class="mmhg">mmHg</span>
+				<span class="settime">测于{{blood.created_at}}</span>
+				<div class="other">其它信息</div>
+				<ul class="content">
+					<li class="li-one"><img src="img-room/症状感受.png" alt="" class="one-icon"/>&nbsp;&nbsp;&nbsp;症状感受&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-s1">{{blood.symptoms}}</span></li>
+					<li class="li-two"><img src="img-room/Shape.png" alt="" class="two-icon"/></i>&nbsp;&nbsp;&nbsp;运动状态&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-s2">轻微运动</span></li>
+					<li class="li-three"><img src="img-room/Group 13.png" alt="" class="three-icon"/>&nbsp;&nbsp;&nbsp;用药记录&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-s3">{{blood.use_drug}}</span></li>
+					<li class="li-four"><img src="img-room/饮食.png" alt="" class="four-icon"/>&nbsp;&nbsp;&nbsp;饮食类型&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-s4">动物性食物</span></li>
+					<li class="li-five">
+					<p>补充信息</p><span class="text-s5">{{blood.note}}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="jquery-1.11.1.js"></script>
+		<script src="js/vue2.0.js"></script>
+		<script>
+			var app = new Vue({
+				el:'#app',
+				data:{
+					blood:{
+						created_at:1500705542,
+						heart_rate:68,
+						high:120,
+						id:"58be828af9576c3ed5578bc1",
+						low:88,
+						measured_at:1488880252,
+						mood:[0,245,245,2454,45],
+						note:"hhhh,这么神奇！居然是动态创建",
+						source:"manual",
+						symptoms:'无不适',
+						updated_at:1500705542,
+						use_drug:'阿莫西林2粒，感冒药3粒，藿香正气胶囊2粒'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

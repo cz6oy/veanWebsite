@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>问安值班室</title>
+		<style>
+			a{
+				text-decoration: none;
+			}
+			.w{
+				width: 1280px;
+				height: 800px;
+				margin: 0 auto;
+				position: relative;
+			}
+			.back-img{
+				width: 100%;
+				height: 800px;
+				background: url(img-room/背景.png) no-repeat;
+			}
+			.back-img .erweima-login {
+				width: 400px;
+				height: 445px;
+				background-color: #fff;
+				position: absolute;
+				top: 150px;
+				left: 440px;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+			}
+			.back-img .erweima-login span.login-s1,
+			.phoneNum-login .login-s1{
+				display: inline-block;
+				width: 400px;
+				height: 33px;
+				font: 24px/33px PingFangSC-Regular;
+				color: #1BBD8F;
+				padding-top: 55px;
+				text-align: center;
+			}
+			.back-img .erweima-login .erweima{
+				width: 180px;
+				height: 180px;
+				background-color: #ccc;
+				position: absolute;
+				top: 160px;
+				left: 110px;
+			}
+			.back-img .erweima-login .login-p1{
+				font: 15px/21px PingFangSC-Regular;
+				color: #8E8E93;
+				position: absolute;
+				top: 360px;
+				left: 110px;
+			}
+			.back-img .erweima-login .bottom-text{
+				height: 25px;
+				position: absolute;
+				top: 407px;
+				left: 132px;
+				cursor: pointer;
+			}
+			.back-img .erweima-login .bottom-text img {
+				width: 25px;
+			}
+			.back-img .erweima-login .bottom-text span.phone-login{
+				font: 17px/25px PingFangSC-Regular;
+				height: 25px;
+				color: #646464;
+			}
+			/*二维码登录结束*/
+			
+			/*手机号登录开始*/
+			.back-img .phoneNum-login{
+				width: 400px;
+				height: 445px;
+				background-color: #fff;
+				position: absolute;
+				top: 150px;
+				left: 440px;
+				box-shadow: 2px 2px 4px 1px #C8C7CC;
+				display: none;
+			}
+			.back-img .phoneNum-login .loginUser input{
+				outline: none;
+			}
+			.back-img .phoneNum-login .loginUser{
+				position: absolute;
+				top: 151px;
+				left: 29.2px;
+				width: 342px;
+				height: 55px;
+				
+			}
+			.back-img .phoneNum-login .loginPass{
+				position: absolute;
+				top: 219px;
+				left: 29.2px;
+			}
+			.back-img .phoneNum-login .input-1{
+				border: 0 none;
+				outline-style: none;
+				position: relative;
+				width: 284px;
+				height: 55px;
+				font-size: 17px;
+				color:#A2A2A2;
+				padding-left: 58.8px;
+				border: 1px solid #A2A2A2;
+			}
+			 .back-img .phoneNum-login .input-2{
+				outline-style: none;
+				border: 0 none;
+				position: relative;
+				width: 284px;
+				height: 55px;
+				color: #A2A2A2;
+				font-size: 17px;
+				padding-left: 58.8px;
+				border: 1px solid #A2A2A2;
+			} 
+			.phoneNum-login .loginUser .img-username{
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				background: url(../img-room/手机号@2x.png) no-repeat;
+			} 
+			.back-img .phoneNum-login a{
+				display: block;
+				width: 240px;
+				height: 50px;
+				background-color: #1BBD8F;
+				border-radius: 30px 30px 30px 30px;
+				text-align: center;
+				position: absolute;
+				top: 304px;
+				left: 80px;
+			}
+			.back-img .phoneNum-login a span {
+				font-size: 28px;
+				line-height: 50px;
+				color: #fff;
+			}
+			.back-img .phoneNum-login .bottom-erweima {
+				height: 25px;
+				position: absolute;
+				top: 407px;
+				left: 132px;
+				cursor: pointer;
+			}
+			/*手机号登录结束*/
+			
+			/*底部开始*/
+			.bottom-box{
+				width: 100%;
+				height: 280px;
+			}
+			.bottom-box .h{
+				width: 1280px;
+				height: 280px;
+				margin: 0 auto;
+				border: 1px solid red;
+			}
+			.bottom-box-text{
+				width: 326px;
+				height: 40px;
+			}
+			/*底部结束*/
+			.bottom-text{
+				width: 130px;
+				height: 30px;
+			}
+			.bottom-text img{
+				line-height: 30px;
+				float: left;
+			}
+			.bottom-text span{
+				display: block;
+				width: 105px;
+				float: left;
+				line-height: 30px;
+			}
+			.bottom-erweima{
+				width: 168px;
+				height: 30px;
+			}
+			.bottom-erweima img{
+				line-height: 30px;
+				float: left;
+			}
+			.bottom-erweima span{
+				display: block;
+				width: 130px;
+				float: left;
+				line-height: 30px;
+				padding-left: 10px;
+				color: #646464;
+			}
+			.phoneNum-login .icon-login{
+				width: 50px;
+				height: 50px;
+				background: url("img-room/手机号@2x.png") no-repeat;
+				position: absolute;
+				top: 156px;
+				left: 30px;
+				z-index: 1;
+			}
+			.phoneNum-login .icon-password{
+				width: 50px;
+				height: 50px;
+				background: url("img-room/密码@2x.png") no-repeat;
+				position: absolute;
+				top: 223px;
+				left: 31px;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="back-img">
+			<div class="w">
+				<div class="erweima-login">
+					<span class="login-s1">欢迎登录问安值班室</span>
+					<div class="erweima"></div>
+					<p class="login-p1">问安好医生APP扫一扫登录</p>
+					<div class="bottom-text"><img src="img-room/手机号登录@3x.png" alt="" /><span class="phone-login">手机号码登录</span></div>
+				</div>
+				<div class="phoneNum-login">
+					<span class="login-s1">欢迎登录问安值班室</span>
+					<div class="icon-login"></div>
+					<div class="icon-password"></div>
+					<div class="loginUser"><input type="text" value="" placeholder="请输入手机号码" class="input-1"/></div>
+					<div class="loginPass"><img src="" alt=""><input type="password" value="" placeholder="请输入密码" class="input-2"/></div>
+					<a href=""><span>登录</span></a>
+					<div class="bottom-erweima"><img src="img-room/二维码.png" alt="" /><span class="phone-login">APP扫二维码登录</span></div>
+				</div>
+			</div>
+		</div>
+		<!--底部-->
+		<div class="bottom-box">
+			<div class="h">
+				<div class="bottom-box-text">
+					<p>Copyright©2015 wenanle.com All Rights Reserved</p>
+					<p>晋ICP备15004007号-1</p>
+				</div>
+			</div>
+		</div>
+		<script src="jquery-1.11.1.js"></script>
+		<script>
+			var telLogin = $(".bottom-text");
+			var phoneLogin = $(".bottom-erweima");
+			var erweimaLoginHide = $(".erweima-login");
+			var phoneNumLoginShow = $(".phoneNum-login");
+			telLogin.click(function(){
+				erweimaLoginHide.hide(500);
+				phoneNumLoginShow.show(500);
+			});
+			phoneLogin.click(function(){
+				erweimaLoginHide.show(500);
+				phoneNumLoginShow.hide(500);
+			});
+		</script>
+	</body>
+</html>
